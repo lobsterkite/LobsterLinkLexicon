@@ -1,0 +1,2776 @@
+<html><link rel="stylesheet" href="styles.css"><body><table><thead><td>Post #</td><td>Source</td><td>Dates</td><td>Author</td><td>Post</td></tr></thead><tbody><tr><td><a id="Post1" href="#Post1">#1</a></td><td><a href="https://web.archive.org/web/20080812152635/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/06/07, 2:21 PM">Patch 2.1.1</span></td><td>• Disquette</td><td>
+	
+	
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				
+				<strong><!-- google_ad_section_start -->[Melee Combat] How does Flurry Work?<!-- google_ad_section_end --></strong>
+			</div>
+			<hr size="1" style="color:#FFFFFF">
+			<!-- / icon and title -->
+		
+		
+		<!-- message -->
+		<div id="post_message_377481"><!-- google_ad_section_start --><b>Background</b><br>
+Over at the Enhancement Shaman thread, we have built dps simulators.  Upon testing these simulators, we are finding that white hits are under-reported significantly.  It seems obvious that Flurry being "messed up" is responsible for this.  This throws a huge wrench in any calculations of Shaman or DPS warrior theory crafting.<br>
+<br>
+<b>Tooltip - What Flurry *should* do</b><br>
+<div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:0px"></div>
+	<table cellpadding="3" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border:1px inset">
+			
+				Increases your attack speed by 30% for your next 3 swings after dealing a critical strike.
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>That seems almost straight-forward.  Now, perhaps you could read it as "finish all swings that are in-flight, then hasten the next 3".  Or, "hasten all attacks, including ones mid-flight, until you have swung 3 times".  Either way, 3 is a pretty critical number.<br>
+<br>
+<b>The problem tested</b><br>
+<br>
+1) Get two weapons of varying speeds, with as large a delay as possible. <br>
+- I don't want to have the synchronized hits causing any funny business<br>
+- The larger the delay, the less that ping time will affect the results<br>
+2) Go hit a blasted lands mob, turn on combat log, making sure no weapons/armor has procs that would affect the outcome (mongoose, drakefist hammer, abacus, etc)<br>
+<br>
+<b>The problem illustrated</b><br>
+In the attached screenshot, I think the problem is very clearly illustrated.  A critical strike is affecting up to 6 hits with the flurry buff.  Here's how to read the chart:<br>
+<br>
+blue shading - in a flurry state<br>
+pink shading - the last crit before flurry fades.  At this point, only 3 more attacks should be affected<br>
+yellow shading - the number of attacks before combat log reads "Flurry fades from you."<br>
+no shading - period of non-fluried attacks.<br>
+grey/white column shading for "average" - This shows how many rows I'm actually averaging.<br>
+<br>
+In short, not only does the combat log read "You gain flurry" and "Flurry fades from you", but the average swing speed in those periods actually agrees with the combat log.  That is, this does not seem to be server-client lag.  This is why I have the average columns there - so you can verify that when the combat log says flurry IS NOT active, it is indeed about 2.6speed mainhand, and 2.8speed offhand.  Also, when flurry IS active, the speeds correctly register at an average about 2.0 mainhand and 2.15 offhand.<br>
+<br>
+Seeing as how two classes are highly flurry dependent for their damage, I do believe it warrants its own thread.<br>
+<br>
+I'll be happy to provide the raw combat log if asked.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+		<!-- attachments -->
+			<div style="padding:3px">
+			
+			
+				<fieldset class="fieldset">
+					<legend>Attached Thumbnails</legend>
+					<div style="padding:3px">
+					<a href="/web/20080812152635/http://elitistjerks.com/attachments/f31/a562d1181154060-melee_combat_how_does_flurry_work/flurry_stuff.gif"><img class="thumbnail" src="/web/20080812152635im_/http://elitistjerks.com/attachments/f31/a562d1181154060t-melee_combat_how_does_flurry_work/flurry_stuff.gif" border="0" alt="flurry_stuff.gif"></a>
+&nbsp;
+					</div>
+				</fieldset>
+			
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			</div>
+		<!-- / attachments -->
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post2" href="#Post2">#2</a></td><td><a href="https://web.archive.org/web/20080812152635/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/06/07, 4:39 PM">Patch 2.1.1</span></td><td>◊ Lactose</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_377698"><!-- google_ad_section_start -->Is this consistent? As in, does Flurry sometimes fade after 3 (or rather, less than 6) attacks?<br>
+Just by looking at these numbers, it kinda seems like the <i>your next 3 swings</i> part is applied to each weapon, instead of total swings?<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post3" href="#Post3">#3</a></td><td><a href="https://web.archive.org/web/20080812152635/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/06/07, 5:05 PM">Patch 2.1.1</span></td><td>WibbleNZ</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_377727"><!-- google_ad_section_start -->It would be interesting to see results with different weapon speeds, it may be that flurry lasts for your next 3 MH swings.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post4" href="#Post4">#4</a></td><td><a href="https://web.archive.org/web/20080812152635/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/06/07, 5:21 PM">Patch 2.1.1</span></td><td>• Disquette</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_377749"><!-- google_ad_section_start -->I pulled out just the "really interesting" ones.  Sometimes it lasts for 4 swings (2MH, 2OH), and, rarely, it lasts for 2 swings.<br>
+<br>
+The 4 and 2 swings ones seem to happen when there is a single crit that gets flurried, and, as you'll notice, both of those sections i highlighted happen on the end of a flurry train that's already going.<br>
+<br>
+I have to finish the parse though to get more data.<br>
+<br>
+I'm actually very surprised at the lack of interest in this topic so, considering how important it is in determining dps.  Thank you both for the questions/comments, and I'll post an update tomorrow when I've done more datamining.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post5" href="#Post5">#5</a></td><td><a href="https://web.archive.org/web/20080812152635/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/06/07, 5:36 PM">Patch 2.1.1</span></td><td>• Apate</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_377768"><!-- google_ad_section_start --><div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:0px"></div>
+	<table cellpadding="3" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border:1px inset">
+			
+				<div>
+					Originally Posted by <strong>Disquette</strong>
+					<a href="/web/20080812152635/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/#post377749" rel="nofollow"></a>
+				</div>
+				<div style="font-style:italic">I'm actually very surprised at the lack of interest in this topic so, considering how important it is in determining dps.  Thank you both for the questions/comments, and I'll post an update tomorrow when I've done more datamining.</div>
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>Please don't interpret silence as a lack of interest.  I, for one, just don't have anything to add (aside form this), but I look forward to more testing.  The mechanics of flurry are simply something I never really thought to question beyond the tooltip.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post6" href="#Post6">#6</a></td><td><a href="https://web.archive.org/web/20080812152635/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/06/07, 6:05 PM">Patch 2.1.1</span></td><td>◊ Lactose</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_377810"><!-- google_ad_section_start -->Would you mind uploading the text file? I think I've got an idea.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post7" href="#Post7">#7</a></td><td><a href="https://web.archive.org/web/20080812152635/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/06/07, 6:16 PM">Patch 2.1.1</span></td><td>Celandro</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_377816"><!-- google_ad_section_start -->Looking at the log, it may be that flurry charges are queuing up. Specifically,<br>
+I120: 3 queued<br>
+I121: 3-1+3 = 5 queued<br>
+I122: 5-1 =4queue<br>
+I123: 4-1 =3queue<br>
+I124: 3-1 +3 =5queue<br>
+I125: 5-1 =4queue<br>
+I126: 4-1 +3 =6queue<br>
+I127: 6-1 =5queue<br>
+I128: 5-1 =4queue<br>
+I129: 4-1 +3=6queue<br>
+I130: 6-1 =5queue<br>
+I131: 5-1 =4queue<br>
+I132: 4-1 =3queue<br>
+I133: 3-1 =2queue<br>
+I134: 2-1 =1queue<br>
+I135: 1-1 =0queue<br>
+I136: Flurry fades<br>
+<br>
+<br>
+I148: 3 queued<br>
+I150: 3-1 +3= 5 queued<br>
+I151: 5-1 = 4 queued<br>
+I152: 4-1 +3= 6 queued<br>
+I153: 6-1 +3= 8 queued<br>
+I154: 8-1 = 7 queued<br>
+I155: 7-1 = 6 queued<br>
+I156: 6-1 +3= 8 queued<br>
+I157: 8-1 = 7 queued<br>
+I158: 7-1 = 6 queued<br>
+I159: 6-1 = 5 queued<br>
+I160: 5-1 +3= 7 queued<br>
+I162: 7-1 = 6 queued<br>
+I163: 6-1 = 5 queued<br>
+I164: 5-1 = 4 queued<br>
+I165: 4-1 = 3 queued<br>
+I166: 3-1 = 2 queued<br>
+I167: 2-1 = 1 queued<br>
+I168: Fades<br>
+<br>
+Nope doesnt work  but its kinda close<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post8" href="#Post8">#8</a></td><td><a href="https://web.archive.org/web/20080812152635/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/06/07, 6:51 PM">Patch 2.1.1</span></td><td>• Disquette</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_377852"><!-- google_ad_section_start -->I've uploaded the full log.  You'll have to strip out a bunch of stuff probably, I know it made it easier for me.  Also, the way I figured offhand/mainhand was by the amount of damage the swing did, and for my misses, I went through one by one and looked at the surrounding attacks to determine which was which.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+		<!-- attachments -->
+			<div style="padding:3px">
+			
+			
+		
+			
+			
+			
+			
+			
+				<fieldset class="fieldset">
+					<legend>Attached Files</legend>
+					<table cellpadding="0" cellspacing="3" border="0">
+					<tbody><tr>
+	<td></td>
+	<td><a href="/web/20080812152635/http://elitistjerks.com/attachments/f31/a564d1181170267-melee_combat_how_does_flurry_work/flurryinfo.txt">FlurryInfo.txt</a> <font color="#000000" style="font-size: 10px">(34.6 KB, 96 views)</font></td>
+</tr>
+					</tbody></table>
+				</fieldset>
+			
+			
+			
+			
+			</div>
+		<!-- / attachments -->
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post9" href="#Post9">#9</a></td><td><a href="https://web.archive.org/web/20080812152635/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/06/07, 7:23 PM">Patch 2.1.1</span></td><td>Timmervargen</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_377881"><!-- google_ad_section_start -->It's something that interests me as well. I've got my new pet project back in the other thread, but if you need data I could be up for providing some samples, seeing that I spend time with the Servants already. If so, any special parameters you want on it, or just plain unbuffed weapons of varying speeds on auto attack? I'm due for a respec soon either way, shifting a few points around. I could gather samples with 1-5 points in Flurry for comparative purposes if that would be useful.<br>
+<br>
+As for what causes this behaviour from Flurry, I'm rather stumped at the moment. Will mull if over and pray for a moment of clarity.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post10" href="#Post10">#10</a></td><td><a href="https://web.archive.org/web/20080812152635/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/06/07, 7:50 PM">Patch 2.1.1</span></td><td>• Disquette</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_377912"><!-- google_ad_section_start -->Probably an automated system for timestamping Offhand and Mainhand hits in an easy-to-parse format would be the biggest help.<br>
+<br>
+Actually, if you have any un-enchanted tests (no stormstrike, no windfury), and can provide the same sort of combat log with different speed weapons than i had (2.6 and 2.8), that'd be helpful probably.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post11" href="#Post11">#11</a></td><td><a href="https://web.archive.org/web/20080812152635/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/06/07, 8:37 PM">Patch 2.1.1</span><br /><span>Edited on</span><span title="undefined undefined undefined">undefined</span></td><td>slant</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_377947"><!-- google_ad_section_start -->Here's my theory.<br>
+<br>
+- Flurry does <i>not</i> stack on itself.<br>
+- <b>However,</b> it does work independently on each hand, just like crusader, so you can have 6 total charges. Like crusader, that isn't visible in the buff icon.<br>
+- If an attack procs flurry, it doesn't consume a charge.<br>
+<br>
+Row numbers in my spreadsheet match yours.<br>
+<br>
+<a href="https://web.archive.org/web/20080812152635/http://img479.imageshack.us/my.php?image=flurryxlsyr3.jpg" target="_blank"><img src="https://web.archive.org/web/20080812152635im_/http://img479.imageshack.us/img479/6048/flurryxlsyr3.th.jpg" border="0" alt="" onload="NcodeImageResizer.createOn(this);"></a><br>
+<br>
+Thoughts? It does seem to fit your results.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+		<!-- edit note -->
+			<div class="smallfont">			<hr size="1" style="color:#FFFFFF">
+				<em>
+				Last edited by slant : 06/06/07 at <span class="time">8:49 PM</span>.
+				
+				</em>
+			</div>
+		<!-- / edit note -->
+		
+	
+	</td></tr><tr><td><a id="Post12" href="#Post12">#12</a></td><td><a href="https://web.archive.org/web/20080812152635/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/06/07, 8:49 PM">Patch 2.1.1</span></td><td>• Disquette</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_377958"><!-- google_ad_section_start -->The part that I don't see working with that theory is that when you have a single proc, you don't get just that hand sped up (I think).  For instance, in that same combat log, check this part out from the very first flurry in the combat log:<br>
+<br>
+<div style="margin:20px; margin-top:5px">
+	<div class="smallfont" style="margin-bottom:0px"></div>
+	<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 3px;
+		border: 1px inset;
+		width: 694px;
+		height: 178px;
+		text-align: left;
+		overflow: auto">6/6 11:06:54.125  You hit Servant of Allistarj for 98. (OH)
+6/6 11:06:54.187  You hit Servant of Allistarj for 296. (MH)
+6/6 11:06:56.734  You hit Servant of Allistarj for 237. (MH)
+6/6 11:06:56.734  You crit Servant of Allistarj for 198. (OH) &lt;-- flurry!
+6/6 11:06:57.515  You gain Flurry.
+6/6 11:06:58.781  You hit Servant of Allistarj for 290. (MH) - 2.047
+6/6 11:06:59.062  You hit Servant of Allistarj for 104. (OH) - 2.328
+6/6 11:07:00.031  You hit Servant of Allistarj for 269. (MH) - 1.250
+6/6 11:07:01.187  You hit Servant of Allistarj for 101. (OH) - 2.125
+6/6 11:07:02.140  Flurry fades from you.</pre>
+</div>(after that there are a bunch of regular hits with "normal" weapon delay)<br>
+<br>
+In this example, Flurry is clearly evident on both hands (and wow @ that 1.25 delay main hand swing), even though only the off hand crit proc'd it.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post13" href="#Post13">#13</a></td><td><a href="https://web.archive.org/web/20080812152635/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/06/07, 8:51 PM">Patch 2.1.1</span></td><td>slant</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_377961"><!-- google_ad_section_start -->Well it would still haste both hands as expected, flurry is an aura, but the buff itself can be applied independently, like crusader.<br>
+<br>
+You may have parried before that 1.25s swing, too.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post14" href="#Post14">#14</a></td><td><a href="https://web.archive.org/web/20080812152635/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/06/07, 8:52 PM">Patch 2.1.1</span></td><td>◊ Vulajin</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_377964"><!-- google_ad_section_start -->Well, let's start with what we know about Flurry:<br>
+<br>
+- The length of time a weapon swing will take is determined after the previous swing with that weapon.<br>
+- When you crit, you gain a buff with three charges.<br>
+- When you swing while Flurry is active, the time-to-next-swing is only 70% of the normal length.<br>
+<br>
+Looking at the upper yellow region in your screenshot, let's see what's going on. First of all, you MH crit at 542.656 and proc three fresh Flurry charges. At the same time, you were already <i>in</i> Flurry, so your next MH swing gets the haste, and your ongoing OH swing was already hasted.<br>
+<br>
+Now, your OH hits at 544.187. Because Flurry is up, your next OH swing gets hasted. You should have 2 charges of Flurry left.<br>
+<br>
+Your MH hits at 544.671. Flurry is up, so your next MH swing gets hasted. You should have 1 charge of Flurry left.<br>
+<br>
+Your OH hits again at 546.312. Flurry is up, so your next OH swing is again hasted. You should be out of Flurry charges.<br>
+<br>
+Here's where weird stuff happens. Your MH hits again at 546.875 and gets hasted. Now you're at -1 Flurry charges. O.o<br>
+<br>
+Your OH hits at 548.5. Its next swing <i>is not</i> hasted (as you can see the next OH swing comes with a 2.625 delay at 551.125).<br>
+<br>
+Your MH hits at 548.718. Its next swing <i>is not</i> hasted (as you can see the next MH swing comes with a 2.594 delay at 551.312).<br>
+<br>
+Finally, at 549.296, over two seconds after the last hasted hit (and three seconds after it should have been used up), Flurry wears off.<br>
+<br>
+Now, my potential explanation for this is that Flurry doesn't wear off until the last Flurry-effected swing connects. However, it also seems to be affecting one more hit than it should. The "extra" hasted swing (by the MH at 546.875) doesn't seem to come soon enough after the third hasted swing to be able to be considered a lag effect. In addition, it's not likely that the first hasted swing incorrectly used a leftover charge of Flurry from before the 542.656 MH crit, because the first swing after that crit was over a second and a half later, plenty of time for the new Flurry effect to replace the old.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post15" href="#Post15">#15</a></td><td><a href="https://web.archive.org/web/20080812152635/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/06/07, 8:57 PM">Patch 2.1.1</span></td><td>Pater</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_377968"><!-- google_ad_section_start -->Not sure if it helps, but a few weeks ago for my sim, I verified that the first swing after a flurry is proc'd by a special consumes the first charge.  (Nothing in my offhand, so no OH swings.)<br>
+<br>
+Something like this:<br>
+0.00 MH swing (flurry count = 0)<br>
+1.00 SS crit (flurry count = 3)<br>
+2.00 MH swing (flurry count = 2)<br>
+<br>
+Now, I never felt like I had enough precision in the time stamps to see whether flurry haste was prorated across the full delay, or if part of the flurry period is just wasted, or what.  But I definitely verified that the first swing consumes 1 charge, even if it's only very shortly after the SS crit.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post16" href="#Post16">#16</a></td><td><a href="https://web.archive.org/web/20080812152635/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/06/07, 9:00 PM">Patch 2.1.1</span></td><td>◊ Lactose</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_377970"><!-- google_ad_section_start -->What I'm getting:<ul><li>Flurry is attached per weapon (off-hand vs main hand), lasting for 3 swings on said weapon.</li>
+<li>While Flurry is active (on either off-hand, main hand or both), both weapons get hasted.</li>
+<li>A crit reset its weapon's duration to 3 swings.</li>
+<li>When no weapon has a Flurry attached to it, the Flurry effect fades.</li>
+</ul><!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post17" href="#Post17">#17</a></td><td><a href="https://web.archive.org/web/20080812152635/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/06/07, 9:14 PM">Patch 2.1.1</span></td><td>slant</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_377978"><!-- google_ad_section_start -->No. If you proc flurry mainhand, offhand attacks definitely consume charges. <br>
+<br>
+I still think my theory stands up.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post18" href="#Post18">#18</a></td><td><a href="https://web.archive.org/web/20080812152635/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/06/07, 9:22 PM">Patch 2.1.1</span></td><td>• Disquette</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_377981"><!-- google_ad_section_start --><div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:0px"></div>
+	<table cellpadding="3" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border:1px inset">
+			
+				<div>
+					Originally Posted by <strong>Vulajin</strong>
+					<a href="/web/20080812152635/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/#post377964" rel="nofollow"></a>
+				</div>
+				<div style="font-style:italic">Well, let's start with what we know about Flurry:<br>
+<br>
+- The length of time a weapon swing will take is determined after the previous swing with that weapon.<br>
+- When you crit, you gain a buff with three charges.<br>
+- When you swing while Flurry is active, the time-to-next-swing is only 70% of the normal length.<br>
+<br>
+Looking at the upper yellow region in your screenshot, let's see what's going on. First of all, you MH crit at 542.656 and proc three fresh Flurry charges. At the same time, you were already <i>in</i> Flurry, so your next MH swing gets the haste, and your ongoing OH swing was already hasted.<br>
+<br>
+Now, your OH hits at 544.187. Because Flurry is up, your next OH swing gets hasted. You should have 2 charges of Flurry left.<br>
+<br>
+Your MH hits at 544.671. Flurry is up, so your next MH swing gets hasted. You should have 1 charge of Flurry left.<br>
+<br>
+Your OH hits again at 546.312. Flurry is up, so your next OH swing is again hasted. You should be out of Flurry charges.<br>
+<br>
+Here's where weird stuff happens. Your MH hits again at 546.875 and gets hasted. Now you're at -1 Flurry charges. O.o<br>
+<br>
+Your OH hits at 548.5. Its next swing <i>is not</i> hasted (as you can see the next OH swing comes with a 2.625 delay at 551.125).<br>
+<br>
+Your MH hits at 548.718. Its next swing <i>is not</i> hasted (as you can see the next MH swing comes with a 2.594 delay at 551.312).<br>
+<br>
+Finally, at 549.296, over two seconds after the last hasted hit (and three seconds after it should have been used up), Flurry wears off.<br>
+<br>
+Now, my potential explanation for this is that Flurry doesn't wear off until the last Flurry-effected swing connects. However, it also seems to be affecting one more hit than it should. The "extra" hasted swing (by the MH at 546.875) doesn't seem to come soon enough after the third hasted swing to be able to be considered a lag effect. In addition, it's not likely that the first hasted swing incorrectly used a leftover charge of Flurry from before the 542.656 MH crit, because the first swing after that crit was over a second and a half later, plenty of time for the new Flurry effect to replace the old.</div>
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>Very nice explanation and walkthrough of the combat process, thank you.  I think it fits with what Pater wrote as well.<br>
+<br>
+I'll have more of the excel file (well, screenshots and the whole .xls) for viewing tomorrow.<br>
+<br>
+I wonder if it's as simple as saying "flurry grants you 4 charges instead of 3", and that the rest of the confusing aspect came from me not interpreting the data correctly.  Ah well, on to the g/f's house, I'll resume thoughts on this tomorrow :p<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post19" href="#Post19">#19</a></td><td><a href="https://web.archive.org/web/20080812152635/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/06/07, 9:24 PM">Patch 2.1.1</span></td><td>• Disquette</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_377982"><!-- google_ad_section_start --><div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:0px"></div>
+	<table cellpadding="3" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border:1px inset">
+			
+				<div>
+					Originally Posted by <strong>slant</strong>
+					<a href="/web/20080812152635/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/#post377961" rel="nofollow"></a>
+				</div>
+				<div style="font-style:italic">You may have parried before that 1.25s swing, too.</div>
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>Well aren't you a smart cookie!<br>
+<br>
+<div style="margin:20px; margin-top:5px">
+	<div class="smallfont" style="margin-bottom:0px"></div>
+	<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 3px;
+		border: 1px inset;
+		width: 694px;
+		height: 146px;
+		text-align: left;
+		overflow: auto">6/6 11:06:58.781  You hit Servant of Allistarj for 290.
+6/6 11:06:59.062  You hit Servant of Allistarj for 104.
+6/6 11:06:59.156  Servant of Allistarj attacks. You parry. &lt;-------
+6/6 11:07:00.031  You hit Servant of Allistarj for 269.
+6/6 11:07:00.234  You gain 60 health from Healing Stream Totem VI's Healing Stream.
+6/6 11:07:01.046  Servant of Allistarj misses you.
+6/6 11:07:01.187  You hit Servant of Allistarj for 101.
+6/6 11:07:02.140  Flurry fades from you.</pre>
+</div>thanks - sometimes i miss the rather obvious in my attempts to cut down on the noise in the combat log ;-)<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post20" href="#Post20">#20</a></td><td><a href="https://web.archive.org/web/20080812152635/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/06/07, 9:29 PM">Patch 2.1.1</span><br /><span>Edited on</span><span title="undefined undefined undefined">undefined</span></td><td>◊ Xerophyte</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_377986"><!-- google_ad_section_start -->The 3 charges per hand theory doesn't appear to hold water either. From the provided log.<br>
+<br>
+<div style="margin:20px; margin-top:5px">
+	<div class="smallfont" style="margin-bottom:0px"></div>
+	<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 3px;
+		border: 1px inset;
+		width: 694px;
+		height: 178px;
+		text-align: left;
+		overflow: auto">6/6 11:07:38.703  You hit Servant of Allistarj for 95.    - OH
+6/6 11:07:39.515  You crit Servant of Allistarj for 488.  - MH
+6/6 11:07:40.484  You gain Flurry.
+6/6 11:07:41.203  You hit Servant of Allistarj for 102.   - OH, 2.500 delay
+6/6 11:07:41.703  You hit Servant of Allistarj for 261.   - MH, 2.188 delay
+6/6 11:07:43.437  You hit Servant of Allistarj for 106.   - OH, 2.234 delay
+6/6 11:07:43.750  You hit Servant of Allistarj for 281.   - MH, 2.047 delay
+6/6 11:07:44.109  Flurry fades from you.
+6/6 11:07:46.031  You crit Servant of Allistarj for 206.  - OH, 2.594 delay
+6/6 11:07:46.546  You crit Servant of Allistarj for 539.  - MH, 2.796 delay</pre>
+</div>4 swings in Flurry, 2 with each hand, all noticeably hasted. In this case the result is pretty consistent with Flurry lasting 3 autoswings; the buff was in fact queued for faiding after the OH hit at 43.437 and the last MH hit just got to tag along for the ride.<br>
+<br>
+My best guess is that what you're looking at is the Flurry "stack" being both slow to renew to 3 after a crit mid-Flurry and slow to fade when it's supposed to. If you crit while at 1 charge remaining then the game takes a second of thinking time before getting you back up to 3 charges, so you get a free extension of your old Flurry. As a Flurry is expended the game takes a second of thinking time to actually fade it, giving another free extension. The two effects combine to make the tail end of any Flurry streak considerably longer than it has a right to.<br>
+<br>
+A good way to discount the above possibility is find an isolated Flurry that lasts for 5-6 hits.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+		<!-- edit note -->
+			<div class="smallfont">			<hr size="1" style="color:#FFFFFF">
+				<em>
+				Last edited by Xerophyte : 06/07/07 at <span class="time">7:33 AM</span>.
+				Reason: Now with correct subtraction!
+				</em>
+			</div>
+		<!-- / edit note -->
+		
+	
+	</td></tr><tr><td><a id="Post21" href="#Post21">#21</a></td><td><a href="https://web.archive.org/web/20080812152635/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/07/07, 4:36 AM">Patch 2.1.1</span></td><td>◊ Lactose</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_378202"><!-- google_ad_section_start -->Indeed slant, I forgot about the fact that off-hand consumes main hand procs (and vice versa). In my defense, it was about 3 AM when I wrote it :P<br>
+The thing about Flurry sometimes lasting a swing too much though, l think can be credited to delay in applying / removing the Flurry buff.<br>
+For example, you can see instanced when the Flurry gain is almost a full second after a crit, and an "extra" flurried hit being ~0.3 seconds after when Flurry should have disappeared.<br>
+At the very least, I don't think this delay should be neglected.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post22" href="#Post22">#22</a></td><td><a href="https://web.archive.org/web/20080812152635/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/07/07, 5:16 PM">Patch 2.1.1</span></td><td>Universal</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_379120"><!-- google_ad_section_start --><div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:0px"></div>
+	<table cellpadding="3" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border:1px inset">
+			
+				<div>
+					Originally Posted by <strong>slant</strong>
+					<a href="/web/20080812152635/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/#post377961" rel="nofollow"></a>
+				</div>
+				<div style="font-style:italic">You may have parried before that 1.25s swing, too.</div>
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>This is something I haven't heard of before.  Does a parry alter your swing timer in some way?  I looked through the log and couldn't find anything consistent.  If there is some effect, do some of the irregularities vanish if we assume such swings don't consume a flurry charge?<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post23" href="#Post23">#23</a></td><td><a href="https://web.archive.org/web/20080812152635/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/07/07, 5:41 PM">Patch 2.1.1</span></td><td>thorin5</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_379173"><!-- google_ad_section_start -->Actually, if the attack hasted from the parry doesn't, for some reason, consume a flurry charge then it would explain that specific instance where it appears to be 4 attacks hasted by flurry.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post24" href="#Post24">#24</a></td><td><a href="https://web.archive.org/web/20080812152635/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/07/07, 6:17 PM">Patch 2.1.1</span></td><td>slant</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_379217"><!-- google_ad_section_start -->Yes, after a parry your next swing is hasted by 40%. No clue if this stacks with or consumes flurry, although everybody assumes it does both.<br>
+<br>
+It's not just lasting one swing too many; Disquette had <i>six</i> flurried attacks after a single proc. There's definitely something else going on.<br>
+<br>
+I still tend to think my explanation is the most likely due to occam's razor; each hand procs separate buffs, simple.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post25" href="#Post25">#25</a></td><td><a href="https://web.archive.org/web/20080812152635/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/07/07, 6:20 PM">Patch 2.1.1</span></td><td>◊ Lactose</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_379224"><!-- google_ad_section_start -->I agree with most of it, excepting<br>
+<div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:0px"></div>
+	<table cellpadding="3" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border:1px inset">
+			
+				If an attack procs flurry, it doesn't consume a charge.
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>I believe it resets that hand's stack, instead of just not consuming a charge.<br>
+Any logs confirming / disproving this?<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post26" href="#Post26">#26</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/07/07, 7:24 PM">Patch 2.1.1</span></td><td>Wandre</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_379228"><!-- google_ad_section_start -->Perhaps if a swing cooldown starts while your flurry buff is active but before the last charge is consumed it will continue at it's "hasted" rate.<br>
+<br>
+This would prove more likely as this happens with spellcasting and slow.  If I cast a spell while slow is up but slow then dissipates before the spell is over I still retain the slowed casting time.<br>
+<br>
+That would explain an extra attack from an opposit hand.  I'll put good money on the fact that you'll never see 2 swings from the same hand connect at a faster speed when you see 4 hasted hits.  Maybe using 2 same speed weapons would help prove this theory.<br>
+<br>
+Edit:  This would also mean that you will always score 3 attacks when using only 1 weapon but generally score 4 attacks at hasted speed with dual wield as long as your weapons start a swing cooldown before the last charge is used.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post27" href="#Post27">#27</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/07/07, 7:29 PM">Patch 2.1.1</span></td><td>• Disquette</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_379234"><!-- google_ad_section_start --><div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:0px"></div>
+	<table cellpadding="3" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border:1px inset">
+			
+				<div>
+					Originally Posted by <strong>Wandre</strong>
+					<a href="/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post379228" rel="nofollow"></a>
+				</div>
+				<div style="font-style:italic">Perhaps if a swing cooldown starts while your flurry buff is active but before the last charge is consumed it will continue at it's "hasted" rate.</div>
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>I like this theory.<br>
+<br>
+Slant, I'm just having trouble with reconciling what you saw (the strings of six, as I highlighted) when the single-hit versions only show 4 hasted attacks.  I'm going to get more data after lowering my crit rate.  There's too much noise in the data currently, but with a 5% crit rate or so it should be easier to identify different scenarios clearly.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post28" href="#Post28">#28</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/07/07, 7:40 PM">Patch 2.1.1</span></td><td>Wandre</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_379245"><!-- google_ad_section_start -->If this is true then a swing cooldown in progress would never be altered, ergo the first swing to be hasted would be any swing cooldown that starts after the crit lands.<br>
+<br>
+So yellow attack crits would normally proc flurry and the white attack that follows would have to connect once before it's hasted cooldown began.  This could actually reduce the effectiveness of Flurry if you crit yellow attacks right after a white attack fired.  That would probably be the cases of 3 hasted hits rather than 4 when using 2 weps.<br>
+<br>
+White hit (start normal cooldown)<br>
+Instant Yellow crit (Flurry 3 charges)<br>
+White hit (start hasted cooldown and eat charge)<br>
+<br>
+That's an example of what would happen if you yellow crit with an attack.  Heroic strike would actually be a better attack because it uses the swing timer and you'd achieve the 4 hasted swings when DWing.  Attacks like Stormstrike and Hamstring which fall outside the swing based attacks would eat charges prematurely.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post29" href="#Post29">#29</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/07/07, 8:35 PM">Patch 2.1.1</span></td><td>slant</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_379299"><!-- google_ad_section_start -->Wait, you show 4 hasted attacks with only one weapon equipped? So much for my theory, then. I guess it was just client/server latency.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post30" href="#Post30">#30</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/08/07, 1:38 AM">Patch 2.1.1</span></td><td>Universal</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_379454"><!-- google_ad_section_start -->I am pretty sure that slant's 2 procs theory isn't the explanation.  For one thing, the example explanation shows OH crits refreshing the MH counter.  I tried 15ish rules for how to decrement from the different procs, but none of them were consistent with both the long sequences Disquette originally posted.  Furthermore, consider this sequence:<br>
+<br>
+<div style="margin:20px; margin-top:5px">
+	<div class="smallfont" style="margin-bottom:0px"></div>
+	<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 3px;
+		border: 1px inset;
+		width: 694px;
+		height: 290px;
+		text-align: left;
+		overflow: auto">6/6 11:10:10.890  You crit Servant of Allistarj for 512.
+6/6 11:10:11.171  You crit Servant of Allistarj for 202.
+6/6 11:10:11.671  You gain 18 health from Healing Stream Totem VI's Healing Stream.
+6/6 11:10:11.968  Servant of Allistarj misses you.
+6/6 11:10:12.781  You hit Servant of Allistarj for 268.
+6/6 11:10:13.296  You hit Servant of Allistarj for 102.
+6/6 11:10:13.765  You gain 18 health from Healing Stream Totem VI's Healing Stream.
+6/6 11:10:13.968  Servant of Allistarj hits you for 81.
+6/6 11:10:14.890  You hit Servant of Allistarj for 279.
+6/6 11:10:15.703  You hit Servant of Allistarj for 109.
+6/6 11:10:15.703  You gain 18 health from Healing Stream Totem VI's Healing Stream.
+6/6 11:10:15.984  Flurry fades from you.
+6/6 11:10:16.000  Servant of Allistarj attacks. You dodge.
+6/6 11:10:17.296  You hit Servant of Allistarj for 269.
+6/6 11:10:17.687  You gain 18 health from Healing Stream Totem VI's Healing Stream.
+6/6 11:10:18.093  Servant of Allistarj hits you for 84.
+6/6 11:10:18.406  You hit Servant of Allistarj for 106.</pre>
+</div>A pair of crits generates only 4 procs and then fades well before any further attacks.<br>
+<br>
+I also believe that the various lag based theories are incorrect.  Look at Disquette's two original examples.  Even if we allow that lag may allow some extra flurried hits (which seems plausible), the flurry buff itself is fading far too late.  The buff fades 3 full seconds after the last hit which "should" have been flurried.  Furthmore, at least in the data we have, this only happens after flurry chains.  Unless chain flurries are themselves creating some sort of processing lag, it seems unlikely that no one would have noticed regular 3 second lag in other contexts before.<br>
+<br>
+I don't have any answer myself.  My wild guess was going to be some sort of variable overwriting but where 2 swings only use one charge if they hit close enough together.  But this doesn't mix with only chain flurries going all the way to six.  I do have one observation that may be useful though:<br>
+<br>
+<div style="margin:20px; margin-top:5px">
+	<div class="smallfont" style="margin-bottom:0px"></div>
+	<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 3px;
+		border: 1px inset;
+		width: 694px;
+		height: 258px;
+		text-align: left;
+		overflow: auto">6/6 11:09:42.312  You hit Servant of Allistarj for 281.
+6/6 11:09:42.687  You hit Servant of Allistarj for 107.
+6/6 11:09:43.109  You cast Healing Stream Totem.
+6/6 11:09:43.531  Flurry fades from you.
+6/6 11:09:43.921  Servant of Allistarj hits you for 103.
+6/6 11:09:44.609  You crit Servant of Allistarj for 580.
+6/6 11:09:45.437  You hit Servant of Allistarj for 103.
+6/6 11:09:45.609  You gain 18 health from Healing Stream Totem VI's Healing Stream.
+6/6 11:09:45.812  You gain Flurry.
+6/6 11:09:45.828  Servant of Allistarj hits you for 96.
+6/6 11:09:46.828  You hit Servant of Allistarj for 271.
+6/6 11:09:47.531  You hit Servant of Allistarj for 111.
+6/6 11:09:47.734  You gain 18 health from Healing Stream Totem VI's Healing Stream.
+6/6 11:09:47.953  Servant of Allistarj misses you.
+6/6 11:09:48.562  Flurry fades from you.</pre>
+</div>This is an example with only 2 flurried swings.  Note that in this case there is actually another hit before the flurry buff appears.  So it seems like whatever mechanism is used, this hit is charged to flurry even though it happened before flurry occurred!  This would be consistent with some sort of queueing mechanism.  If, for example, it queues a ProcCritEffects() for the crit followed by a ProcHitEffects() for the hit, then this outcome would make sense because by the time the hit effects are examined flurry will have procced, even though the hit occurred before flurry procced.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post31" href="#Post31">#31</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/08/07, 2:59 AM">Patch 2.1.1</span></td><td>• Disquette</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_379506"><!-- google_ad_section_start -->Yeah, in the example you showed, it's pretty clear that the Offhand hit is flurried even though the server message happens later.  To pull just the interesting lines:<br>
+<br>
+<div style="margin:20px; margin-top:5px">
+	<div class="smallfont" style="margin-bottom:0px"></div>
+	<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 3px;
+		border: 1px inset;
+		width: 694px;
+		height: 98px;
+		text-align: left;
+		overflow: auto">6/6 11:09:44.609  You crit Servant of Allistarj for 580.   MH
+6/6 11:09:45.437  You hit Servant of Allistarj for 103.   OH
+6/6 11:09:45.812  You gain Flurry.
+6/6 11:09:46.828  You hit Servant of Allistarj for 271.  MH (2.22 second delay)
+6/6 11:09:47.531  You hit Servant of Allistarj for 111.  OH (2.09 second delay) &lt;- 2.8 speed weapon</pre>
+</div><br>
+So tired, bedtime.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post32" href="#Post32">#32</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/08/07, 4:20 AM">Patch 2.1.1</span></td><td>Wandre</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_379542"><!-- google_ad_section_start --><div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:0px"></div>
+	<table cellpadding="3" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border:1px inset">
+			
+				<div>
+					Originally Posted by <strong>Disquette</strong>
+					<a href="/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/post377958.html#post377958" rel="nofollow"></a>
+				</div>
+				<div style="font-style:italic">The part that I don't see working with that theory is that when you have a single proc, you don't get just that hand sped up (I think).  For instance, in that same combat log, check this part out from the very first flurry in the combat log:<br>
+<br>
+<div style="margin:20px; margin-top:5px">
+	<div class="smallfont" style="margin-bottom:0px"></div>
+	<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 3px;
+		border: 1px inset;
+		width: 694px;
+		height: 178px;
+		text-align: left;
+		overflow: auto">6/6 11:06:54.125  You hit Servant of Allistarj for 98. (OH)
+6/6 11:06:54.187  You hit Servant of Allistarj for 296. (MH)
+6/6 11:06:56.734  You hit Servant of Allistarj for 237. (MH)
+6/6 11:06:56.734  You crit Servant of Allistarj for 198. (OH) &lt;-- flurry!
+6/6 11:06:57.515  You gain Flurry.
+6/6 11:06:58.781  You hit Servant of Allistarj for 290. (MH) - 2.047
+6/6 11:06:59.062  You hit Servant of Allistarj for 104. (OH) - 2.328
+6/6 11:07:00.031  You hit Servant of Allistarj for 269. (MH) - 1.250
+6/6 11:07:01.187  You hit Servant of Allistarj for 101. (OH) - 2.125
+6/6 11:07:02.140  Flurry fades from you.</pre>
+</div>(after that there are a bunch of regular hits with "normal" weapon delay)<br>
+<br>
+In this example, Flurry is clearly evident on both hands (and wow @ that 1.25 delay main hand swing), even though only the off hand crit proc'd it.</div>
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>This is from your first example.<br>
+<br>
+The first problem with this is that your MH and OH attacks are both hitting/critting at exactly 11:06:56.734 whent he Flurry procs.  This will cause the buff to be applied to both weapon swings and you will gain flurry on both weapons even though the Offhand procced the Flurry.    Assuming that Flurry affects swing cooldowns any weapon connecting before the Flurry proc dissipates should gain the Flurry speed on subsequent attacks.  This could mean Flurry would fade server side and apply to the cooldown of the OH before Flurry is actually unflagged by the code loop.  It would easily account for the 4th fast swing.  No idea where that 1.2 second attack came from though.<br>
+<br>
+You should be able to see that the weapon that causes the crit will always be the first hasted weapon attack unless a crit occurs at the exact same time as the other hand hits in which case both swing timers will begin at a faster rate.<br>
+<br>
+Another case to back up my previous swing cooldown theory is the fact that here:<br>
+<br>
+<div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:0px"></div>
+	<table cellpadding="3" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border:1px inset">
+			
+				<div>
+					Originally Posted by <strong>Universal</strong>
+					<a href="/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post379454" rel="nofollow"></a>
+				</div>
+				<div style="font-style:italic"><div style="margin:20px; margin-top:5px">
+	<div class="smallfont" style="margin-bottom:0px"></div>
+	<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 3px;
+		border: 1px inset;
+		width: 694px;
+		height: 130px;
+		text-align: left;
+		overflow: auto">6/6 11:09:42.312  You hit Servant of Allistarj for 281.
+6/6 11:09:42.687  You hit Servant of Allistarj for 107.
+6/6 11:09:43.109  You cast Healing Stream Totem.
+6/6 11:09:43.531  Flurry fades from you.
+6/6 11:09:43.921  Servant of Allistarj hits you for 103.
+6/6 11:09:44.609  You crit Servant of Allistarj for 580.
+6/6 11:09:45.437  You hit Servant of Allistarj for 103.</pre>
+</div></div>
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>You will note that the last hit before Flurry fades from the Main hand and refreshes still attacks at the same sped up swing time between the flurrys.  There is a small error margin of 0.078 seconds between the two which is probably a lag issue in the client process.  This reinforces my beleif that Flurry begins hasting swing "cooldowns" at the exact moment of of the crit and only after the buff (or code flag most likely) is removed will it stop the swing cooldowns from being reduced.  That would mean the tooltip does not only haste 3 extra attacks but it puts haste on all swing cooldowns until the buff is removed.<br>
+<br>
+Could this bring extra DPS to the table?  Sure thing but you'd have to be lucky and all swings would have to be simultanious.  Since the debuff is removed after the 3rd attack that swings you'd essentially have to have both hand swings connect at exactly the same time 3 times in a row and the offhand would have to crit on the first double swing because it seems to be processed after the MH.<br>
+<br>
+Example (these are just random numbers but this is what it would look like):<br>
+<br>
+00:00:05 You hit Servant of Allistarj for 207.<br>
+00:00:05 You hit Servant of Allistarj for 107.<br>
+<br>
+00:00:07 You hit Servant of Allistarj for 207.<br>
+00:00:07 You crit Servant of Allistarj for 167.    &lt;=== Flurry actually starts here<br>
+00:00:07 You gain Flurry.<br>
+<br>
+00:00:08.8 You hit Servant of Allistarj for 207.<br>
+00:00:08.8 You hit Servant of Allistarj for 107.<br>
+<br>
+00:00:10.7 You hit Servant of Allistarj for 207.  &lt;=== Last Flurry charge used here.  Swing timer refreshed before flurry is gone.  Swing cooldown for MH is going at hasted rate.<br>
+00:00:10.7 You hit Servant of Allistarj for 107.  &lt;=== Would the swing timer resolve and restart before the Flurry flag is removed?  Hard to test.<br>
+00:00:10.7 Flurry Fades from you.<br>
+<br>
+00:00:12.6 You hit Servant of Allistarj for 207.  &lt;=== This hit resolves at faster swing speed because is was cooling down at a hasted rate.<br>
+??:??:?? You hit Servant of Allistarj for 107.  &lt;=== Depending on when the code refreshes the swing cooldown, this will hit at increased speed or not.<br>
+<br>
+Further testing could be done to check this theory.  It should show that you can obtain 4 hits at increased speed before Flurry fades rather than 3 swings as indicated in the tooltip.<br>
+<br>
+If their code is actually checking on a per swing basis the data shown so far hasn't indicated that is the case, unless it's really a server process to client lag issue.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post33" href="#Post33">#33</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/11/07, 5:32 PM">Patch 2.1.1</span></td><td>• Disquette</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_382893"><!-- google_ad_section_start -->More testing, confirming some of what Wandre said above.<br>
+<br>
+Here we have a 2.8 speed weapon which I'm single handing (with shield in offhand), which flurries to 2.15 speed.  Please see attached screenshot.  This is just one section of a great many that act the exact same way.  Flurry rules (for one hand) are:<br>
+<br>
+<div style="margin:20px; margin-top:5px">
+	<div class="smallfont" style="margin-bottom:0px"></div>
+	<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 3px;
+		border: 1px inset;
+		width: 694px;
+		height: 98px;
+		text-align: left;
+		overflow: auto">On a crit, immediately hasten the next 3 attacks.
+
+While hasting the attacks, show the flurry buff on screen.
+
+After the last of the 3 attacks is made, take off flury from the screen and reset swing to the regular speed.</pre>
+</div>In short, this acts exactly as we think it should on a one hand scenario.  There is nothing ground breaking here, but since things are a bit wonky with dual-wielding, I figure I'd post proof establishing that the baseline of a one-hand encounter is done correctly.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+		<!-- attachments -->
+			<div style="padding:3px">
+			
+			
+				<fieldset class="fieldset">
+					<legend>Attached Thumbnails</legend>
+					<div style="padding:3px">
+					<a href="/web/20081110043404/http://elitistjerks.com/attachments/f31/a603d1181593955-melee_combat_how_does_flurry_work/flurry_onehand.jpg"><img class="thumbnail" src="/web/20081110043404im_/http://elitistjerks.com/attachments/f31/a603d1181593955t-melee_combat_how_does_flurry_work/flurry_onehand.jpg" border="0" alt="flurry_onehand.jpg"></a>
+&nbsp;
+					</div>
+				</fieldset>
+			
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			</div>
+		<!-- / attachments -->
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post34" href="#Post34">#34</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/11/07, 11:31 PM">Patch 2.1.1</span><br /><span>Edited on</span><span title="undefined undefined undefined">undefined</span></td><td>• Disquette</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_383526"><!-- google_ad_section_start -->Finally I took the time to fraps an encounter, and frame by frame it to see what the flurry buff was doing, and meshed that in with the combat log.  Now, here's *exactly* how the client sees the data.  Any takers on how it works?<br>
+<br>
+EDIT: Ok, so i've been looking at this some.  It's like the server will send messages and the client responds to repeats of the same message as superfluous:<br>
+<br>
+51.02 Server says - give him 3<br>
+51.28 Server says - take away 1<br>
+51.88 Client says - Ok, he's got 3, going to start hasting the swings<br>
+53.20 Server says - take away 1<br>
+53.20 Server says - take away 1<br>
+54.20 Client says - Ok, I've taken away 1 charge, we have 2 left now, swings still hasted<br>
+    (ignoring that it should have done it 3 times and been out of flurry right now)<br>
+55.03 Server says - give him 3 <br>
+55.39 Server says - take away 1<br>
+55.76 Client says - Ok, he's got 3, swings still hasted<br>
+57.02 Server says - take away 1<br>
+57.59 Server says - take away 1<br>
+58.19 Client says - Ok, got it, I've taken away 1, we have 2 left now, swings still hasted<br>
+    (even though, again, he should have taken away 3 in this period)<br>
+... skipping a few...<br>
+59.81 Client says - 1 charge left, this is the last swing I'm hasting, and proceeds to do normal attacks thereafter<br>
+<br>
+Next up - test out this theory on the other data sets...<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+		<!-- attachments -->
+			<div style="padding:3px">
+			
+			
+				<fieldset class="fieldset">
+					<legend>Attached Thumbnails</legend>
+					<div style="padding:3px">
+					<a href="/web/20081110043404/http://elitistjerks.com/attachments/f31/a613d1181615495-melee_combat_how_does_flurry_work/flurry_definitive.jpg"><img class="thumbnail" src="/web/20081110043404im_/http://elitistjerks.com/attachments/f31/a613d1181615495t-melee_combat_how_does_flurry_work/flurry_definitive.jpg" border="0" alt="flurry_definitive.jpg"></a>
+&nbsp;
+					</div>
+				</fieldset>
+			
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			</div>
+		<!-- / attachments -->
+		
+
+		
+		<!-- edit note -->
+			<div class="smallfont">			<hr size="1" style="color:#FFFFFF">
+				<em>
+				Last edited by Disquette : 06/11/07 at <span class="time">11:57 PM</span>.
+				
+				</em>
+			</div>
+		<!-- / edit note -->
+		
+	
+	</td></tr><tr><td><a id="Post35" href="#Post35">#35</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/12/07, 3:25 AM">Patch 2.1.1</span></td><td>• Disquette</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_383619"><!-- google_ad_section_start -->And, last message for the night.  I think it's pretty clear that lag is responsible for the flurry chaining longer than it should be.  Two attachments this time, one with a single crit, the other being a crit chain.  The way of interpreting it is exactly as above.  The client won't process more than one charge being used at a time.  Even when you should see 2 flurry charges disappear with no hits registered in between them, it doesn't happen.<br>
+<br>
+In the first attachment, the crit chain, you can see that sometimes a single hit will get back to your client in time for it to reduce the flurry charge before the next hit happens (lines 41.031 and 42.062).  So, it's not a definitive "you get 2 hits for each flurry charge", especially since the hands were alternating hits nicely.<br>
+<br>
+In the second attachment, the lone crit, you see a single crit providing 4 or 5 (I can't tell) flurried attacks.<br>
+<br>
+So, now that we know this, the next question becomes... how do we model this?<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+		<!-- attachments -->
+			<div style="padding:3px">
+			
+			
+				<fieldset class="fieldset">
+					<legend>Attached Thumbnails</legend>
+					<div style="padding:3px">
+					<a href="/web/20081110043404/http://elitistjerks.com/attachments/f31/a614d1181629057-melee_combat_how_does_flurry_work/flurry_definitive_2.jpg"><img class="thumbnail" src="/web/20081110043404im_/http://elitistjerks.com/attachments/f31/a614d1181629057t-melee_combat_how_does_flurry_work/flurry_definitive_2.jpg" border="0" alt="flurry_definitive_2.jpg"></a>
+&nbsp;<a href="/web/20081110043404/http://elitistjerks.com/attachments/f31/a615d1181629064-melee_combat_how_does_flurry_work/flurry_definitive_3.jpg"><img class="thumbnail" src="/web/20081110043404im_/http://elitistjerks.com/attachments/f31/a615d1181629064t-melee_combat_how_does_flurry_work/flurry_definitive_3.jpg" border="0" alt="flurry_definitive_3.jpg"></a>
+&nbsp;<br><br>
+					</div>
+				</fieldset>
+			
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			</div>
+		<!-- / attachments -->
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post36" href="#Post36">#36</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/12/07, 3:29 AM">Patch 2.1.1</span></td><td>Kiklion</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_383620"><!-- google_ad_section_start -->Thought id throw in old rapid fire didn't use its haste effect until after a shot was fired.<br>
+<br>
+say 3 seconds until auto shot fires, use RF, its still 3 seconds and also 3 seconds wasted.<br>
+<br>
+Use RF right before an autoshot and you optimize the RF.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post37" href="#Post37">#37</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/12/07, 4:08 AM">Patch 2.1.1</span></td><td>drats</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_383634"><!-- google_ad_section_start -->I'm not trying to stop the theory-crafting, but if it seems like flurry is misbehaving in our favor  should we continue trying to figure out the cause of it? When we (Nite_Moogle?) figured out and exposed the WF bug it eventually got nerfed/fixed. That ended up costing us a decent amount of dps. If they decide to 'fix' flurry, could the same thing happen?<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post38" href="#Post38">#38</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/12/07, 5:19 AM">Patch 2.1.1</span><br /><span>Edited on</span><span title="undefined undefined undefined">undefined</span></td><td>• Disquette</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_383671"><!-- google_ad_section_start -->Hm, maybe I'll never get to sleep.  It's late, and I'm probably covering ground people already know, but I want to get this in writing so that you can correct me if I understand things incorrectly.<br>
+<br>
+I started thinking about how the flurry strings can continue, and it seemed important to know if the game is set up such that swing timers can be altered mid swing.  The obvious way for me to check this is with parry.  I've heard it's 40% faster on your next swing, but when i used a 40% haste, that didn't work.  However, if you interpret 40% faster to mean "take 40% off the swing time", that works out pretty well.<br>
+<br>
+This means a 2.8 speed weapon, fully benefiting from parry would swing at 2.8 * (1 - 40%) = 1.68 speed.  This is very different from normal haste formulas.<br>
+<br>
+Anyway, check out what happens if you look at the following with a 2.8 speed weapon<br>
+<br>
+<div style="margin:20px; margin-top:5px">
+	<div class="smallfont" style="margin-bottom:0px"></div>
+	<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 3px;
+		border: 1px inset;
+		width: 694px;
+		height: 82px;
+		text-align: left;
+		overflow: auto">Time      What         Result
+0.00       Swing        Hit
+1.00       MobParry   recalc swing timer
+xxx        Next swing</pre>
+</div>What should xxx be?<br>
+<br>
+If swing timers can be recalculated on the fly, xxx should be 2.8 - 1.0 (when the parry happened) * 60%.  In other words, prorate the amount of speed increase due to parry based on how much of your swing is left.<br>
+<br>
+If the parry happened at 2.70 seconds, there should be almost no haste (2.7 + .1*.6 = 2.76) .  If it happens at 0.1 seconds, there should be almost total haste (.1 + 2.7*.6 = 0.1 + 1.62 = 1.72).<br>
+<br>
+The graph lets us see how that formula matches up with swing speeds from my test usiing a single 2.8 speed weapon.  In short, I do believe that weapon speeds can be altered mid-swing depending on events.  This means that you really could have crit strings that are continued by a crit even when you're at 0 charges left on flurry.  That is, it should run out, but the crit that happens while the flurry buff is still running and turns a 2.8 speed swing into a 2.15 speed swing, if the crit happens before the 2.15 from the last charge fading is up.<br>
+<br>
+Anyway, on to the projected vs actual swing-delay-after-a-parry graphs (it's a beautiful name, isn't it).  They're the same data, just the independent / dependent variable switched.  The second one in particular looks pretty convincing to me, but as they say, there's lies, damn lies, and statistics.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+		<!-- attachments -->
+			<div style="padding:3px">
+			
+			
+				<fieldset class="fieldset">
+					<legend>Attached Thumbnails</legend>
+					<div style="padding:3px">
+					<a href="/web/20081110043404/http://elitistjerks.com/attachments/f31/a617d1181636371-melee_combat_how_does_flurry_work/parrygraph.jpg"><img class="thumbnail" src="/web/20081110043404im_/http://elitistjerks.com/attachments/f31/a617d1181636371t-melee_combat_how_does_flurry_work/parrygraph.jpg" border="0" alt="parrygraph.jpg"></a>
+&nbsp;<a href="/web/20081110043404/http://elitistjerks.com/attachments/f31/a618d1181637397-melee_combat_how_does_flurry_work/parrygraph2.jpg"><img class="thumbnail" src="/web/20081110043404im_/http://elitistjerks.com/attachments/f31/a618d1181637397t-melee_combat_how_does_flurry_work/parrygraph2.jpg" border="0" alt="parrygraph2.jpg"></a>
+&nbsp;<br><br>
+					</div>
+				</fieldset>
+			
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			</div>
+		<!-- / attachments -->
+		
+
+		
+		<!-- edit note -->
+			<div class="smallfont">			<hr size="1" style="color:#FFFFFF">
+				<em>
+				Last edited by Disquette : 06/12/07 at <span class="time">5:38 AM</span>.
+				
+				</em>
+			</div>
+		<!-- / edit note -->
+		
+	
+	</td></tr><tr><td><a id="Post39" href="#Post39">#39</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/12/07, 6:18 AM">Patch 2.1.1</span></td><td>panny</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_383718"><!-- google_ad_section_start -->It seems to me the easiest way to check whether haste can affect auto-attack mid-swing is to use a slow 2her and active an Abacus (or Bloodlust) mid-swing. I'm not sure why you went into the parry haste mechanics? (though it is interesting).<br>
+<br>
+To rule the effects of dual wielding out in your lag theory, you could use a <a href="https://tbc.wowhead.com/?item=2208" target="_blank">fast weapon</a> under the effects of as much haste as you can find (Abacus + Haste Pots + Drums of Battle + Bloodlust + Flurry = 0.45 speed), and see if you get similar results of excess Flurry charges. What is the maximum delay that you have observed to not subtract Flurry charges? Sounds like perfect PTR work! <br>
+<br>
+P.S. Thanks for all your hard work. It's much appreciated.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post40" href="#Post40">#40</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/12/07, 6:48 AM">Patch 2.1.1</span></td><td>• Disquette</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_383744"><!-- google_ad_section_start --><div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:0px"></div>
+	<table cellpadding="3" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border:1px inset">
+			
+				<div>
+					Originally Posted by <strong>panny</strong>
+					<a href="/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post383718" rel="nofollow"></a>
+				</div>
+				<div style="font-style:italic">It seems to me the easiest way to check whether haste can affect auto-attack mid-swing is to use a slow 2her and active an Abacus (or Bloodlust) mid-swing.</div>
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>I don't have any on-use haste trinkets, and I happened to have that pretty clean combat log lying around with the parries in it.  The only haste-effect item i have is dragonmaw, and that would either only haste itself (so garunteeing a full swing's worth, *assumedly*), or I could dual-wield and see how it affected the other weapon.  <br>
+<br>
+That seemed like a much messier proposition to parse out, however.  So I took the easy road of using a good test that I already had the log for ^-^<br>
+<br>
+<div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:0px"></div>
+	<table cellpadding="3" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border:1px inset">
+			
+				<div>
+					Originally Posted by <strong>panny</strong>
+					<a href="/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post383718" rel="nofollow"></a>
+				</div>
+				<div style="font-style:italic">To rule the effects of dual wielding out in your lag theory, you could use a fast weapon under the effects of as much haste as you can find (Abacus + Haste Pots + Drums of Battle + Bloodlust + Flurry = 0.45 speed), and see if you get similar results of excess Flurry charges. What is the maximum delay that you have observed to not subtract Flurry charges?</div>
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>I'm guessing a fast weapon would let even more attack slip through the lag, and be even more flurried, but I don't know that for sure.  I know a couple 0.9 delay single attacks took away a flurry charge, and a couple 0.8 attacks got through without being charged.  So, with my lag, somewhere around .8 or .9 seconds is the grace period, as far as I can tell.<br>
+<br>
+Or maybe I have the mechanics wrong, I'm not entirely sure.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post41" href="#Post41">#41</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/12/07, 11:00 AM">Patch 2.1.1</span></td><td>panny</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_383924"><!-- google_ad_section_start --><div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:0px"></div>
+	<table cellpadding="3" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border:1px inset">
+			
+				<div>
+					Originally Posted by <strong>Disquette</strong>
+					<a href="/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post383744" rel="nofollow"></a>
+				</div>
+				<div style="font-style:italic">I don't have any on-use haste trinkets, and I happened to have that pretty clean combat log lying around with the parries in it.  The only haste-effect item i have is dragonmaw, and that would either only haste itself (so garunteeing a full swing's worth, *assumedly*), or I could dual-wield and see how it affected the other weapon.  <br>
+<br>
+That seemed like a much messier proposition to parse out, however.  So I took the easy road of using a good test that I already had the log for ^-^</div>
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>You don't have Bloodlust? ;D<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post42" href="#Post42">#42</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/12/07, 1:39 PM">Patch 2.1.1</span></td><td>• Disquette</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_384159"><!-- google_ad_section_start -->Heh, I truly hadn't thought of that.  However, with server lag, you can see how often data is off of the expected value, and you get the most benefit by having a larger sample.  I don't think I'd want to test one swing, midswing, every 10 minutes!<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post43" href="#Post43">#43</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/12/07, 6:21 PM">Patch 2.1.1</span></td><td>Bufford</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_384768"><!-- google_ad_section_start --><div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:0px"></div>
+	<table cellpadding="3" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border:1px inset">
+			
+				<div>
+					Originally Posted by <strong>Disquette</strong>
+					<a href="/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post384159" rel="nofollow"></a>
+				</div>
+				<div style="font-style:italic">Heh, I truly hadn't thought of that.  However, with server lag, you can see how often data is off of the expected value, and you get the most benefit by having a larger sample.  I don't think I'd want to test one swing, midswing, every 10 minutes!</div>
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>I have really enjoyed this thread, and have tried parsing my own combat logs, but have not come up with anything substantive to add.  Maybe it is the math minor in me, but I will be really disappointed if all these discrepancies simply come down to "Server Lag".<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post44" href="#Post44">#44</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/12/07, 7:45 PM">Patch 2.1.1</span></td><td>• Disquette</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_384899"><!-- google_ad_section_start -->I agree bufford, once i get up the energy to run "yet another set of tests" with fast weapons, we'll be able to see if it's server lag or not.  I did this with a 2.6 and 2.8 weapon, so there should be a pretty pronounced effect if I use a couple of 1.4's<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post45" href="#Post45">#45</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/12/07, 8:00 PM">Patch 2.1.1</span></td><td>Machinator</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_384918"><!-- google_ad_section_start -->As far as parry goes do you have a link to anything showing its a 40% reduction? Searching for it turns up evidence it could be a 50% reduction or a flat time so that your next swing is at T+X or reduces T to a certain value if not lower such as .5. <br>
+<br>
+Are the time left of swings held all server side? That seems a lot of traffic if the server has to tell the client each time a swing should take place, but if there is some client prediction that calculates swing time, if for nothing but animations it could be a clue.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post46" href="#Post46">#46</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/12/07, 8:04 PM">Patch 2.1.1</span></td><td>slant</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_384923"><!-- google_ad_section_start --><div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:0px"></div>
+	<table cellpadding="3" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border:1px inset">
+			
+				<div>
+					Originally Posted by <strong>drats</strong>
+					<a href="/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post383634" rel="nofollow"></a>
+				</div>
+				<div style="font-style:italic">I'm not trying to stop the theory-crafting, but if it seems like flurry is misbehaving in our favor  should we continue trying to figure out the cause of it? When we (Nite_Moogle?) figured out and exposed the WF bug it eventually got nerfed/fixed. That ended up costing us a decent amount of dps. If they decide to 'fix' flurry, could the same thing happen?</div>
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>That's certainly a pragmatic view, but it's one that I can't subscribe to. If you truly feel that the developers are actively working against the best interests of the game, you should stop supporting this behavior by cancelling your subscription. It's naive to think that they're unaware of these things; it's not 1999, everybody is running tests and theorycrafting these days, and blizzard is not verant. We may not agree with many of their decisions, but they do appear to be informed ones.<br>
+<br>
+As far as flurry goes, I really liked my theory. It was elegant. Pity it turned out to be simple server lag, something that's very difficult to model programmatically.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post47" href="#Post47">#47</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/12/07, 8:13 PM">Patch 2.1.1</span></td><td>• Disquette</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_384937"><!-- google_ad_section_start --><div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:0px"></div>
+	<table cellpadding="3" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border:1px inset">
+			
+				<div>
+					Originally Posted by <strong>Machinator</strong>
+					<a href="/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post384918" rel="nofollow"></a>
+				</div>
+				<div style="font-style:italic">As far as parry goes do you have a link to anything showing its a 40% reduction? Searching for it turns up evidence it could be a 50% reduction or a flat time so that your next swing is at T+X or reduces T to a certain value if not lower such as .5.</div>
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>No link other than the one in slant's faq, and i remember reading it somewhere.  It also happens to match the test data in those graphs *really well*.  I had thought it'd be a flat reduction or something like that until i started seeing swings after parries that were almost a full timer.  The only explanation I could think was a prorated swing haste.  The correlation with a prorated model (the blue line in the graphs) to the observed data seems way too high to be just chance.  Evidence of a 50% reduction seems to me like an average of a prorated scenario.<br>
+<br>
+After all, If I simply took the average of the swing times in the combat log, it would indeed look like a 50% or so reduction.  That really doesn't tell the same full story that the testing does.<br>
+<br>
+<div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:0px"></div>
+	<table cellpadding="3" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border:1px inset">
+			
+				Are the time left of swings held all server side? That seems a lot of traffic if the server has to tell the client each time a swing should take place, but if there is some client prediction that calculates swing time, if for nothing but animations it could be a clue.
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>My current theory is that the swing time is held client side and then sent up to the server, which can over-ride it if an event occurs and the message from the server gets sent back to the client in time.  Also, I've learned not to watch animations for help, as watching my combat log shows that the events take place way far off from the animations some times.<br>
+<br>
+<div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:0px"></div>
+	<table cellpadding="3" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border:1px inset">
+			
+				<div>
+					Originally Posted by <strong>slant</strong>
+					<a href="/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post384923" rel="nofollow"></a>
+				</div>
+				<div style="font-style:italic">That's certainly a pragmatic view, but it's one that I can't subscribe to. If you truly feel that the developers are actively working against the best interests of the game, you should stop supporting this behavior by cancelling your subscription. It's naive to think that they're unaware of these things; it's not 1999, everybody is running tests and theorycrafting these days, and blizzard is not verant. We may not agree with many of their decisions, but they do appear to be informed ones.</div>
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>I agree completely with this response.  I'd rather we know how stuff works.  The only way developers wouldn't know about this "issue", if it really is lag-driven, is if they only doing testing on 0 (or close) latency networks with a server that responds near instantly.<br>
+<br>
+<div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:0px"></div>
+	<table cellpadding="3" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border:1px inset">
+			
+				As far as flurry goes, I really liked my theory. It was elegant. Pity it turned out to be simple server lag, something that's very difficult to model programmatically.
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>I'm not saying it's definitely the case, just that it's my working theory for now.  I like your solution a lot better too ;-)  When I do the fast weapons test we'll have a much better reason to believe or throw out the server-lag explanation.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post48" href="#Post48">#48</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/12/07, 8:30 PM">Patch 2.1.1</span><br /><span>Edited on</span><span title="undefined undefined undefined">undefined</span></td><td>◊ Vulajin</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_384955"><!-- google_ad_section_start -->Quick summary of the "facts" as I see them...hopefully this will help:<br>
+<br>
+My understanding of the auto-attack system is that the game maintains a swing timer which simply contains the time remaining to your next attack (if you have two weapons, it keeps two swing timers). When one of your swing timers reaches 0, you can swing with that weapon, and will do so the next time you are within melee range of your target and have your auto-attack turned on. When you swing, your swing timer is reset to the swing delay of that weapon at the moment of your swing.<br>
+<br>
+There are two situations for haste effects. One is parry-haste. This effect can definitely be applied mid-swing. You can easily see this by equipping a nice slow two-hander and fighting something from in front of it. When you parry an attack, your next swing will occur noticeably faster. The second situation is haste rating/other haste effects. These do not apply mid-swing. You can see this as a rogue by equipping a single slow main-hand weapon and popping Slice and Dice partway through a swing. Your ongoing swing will still take the normal amount of time, but the swing after that will be hasted.<br>
+<br>
+----<br>
+<br>
+Now, here's how I think Flurry works with one weapon. You crit, and gain a Flurry buff with 3 charges. The buff provides 30% haste while active. The buff applies immediately, so your swing timer is reset to the 30%-hasted value.<br>
+<br>
+You then swing with haste (count: 1). Your hasted swing eats up a Flurry charge (remaining: 2). The Flurry buff is still up, so your swing timer is reset to the 30%-hasted value.<br>
+<br>
+You swing with haste again (count: 2). Your hasted swing eats up another Flurry charge (remaining: 1). The Flurry buff is still up, so your swing timer is reset to the 30%-hasted value.<br>
+<br>
+You finally swing with haste again (count: 3). You eat up the last Flurry charge, and the buff wears off. Since the buff is gone, your swing timer is reset to the normal value. One Flurry proc, 3 hasted swings.<br>
+<br>
+----<br>
+<br>
+Now, as for Flurry with two weapons. Let's say, for the sake of argument, that you start with a crit from your main hand. You gain the Flurry buff (remaining: 3), and your next main hand swing gets the 30%-hasted timer.<br>
+<br>
+Now, your ongoing offhand swing lands without haste (count: 0). It eats a Flurry charge (remaining: 2) and gets the 30%-hasted timer.<br>
+<br>
+Now, your hasted main hand swing lands (count: 1). It eats another Flurry charge (remaining: 1) and gets the 30%-hasted timer.<br>
+<br>
+Your hasted offhand swing lands (count: 2). It eats your last Flurry charge and gets the normal timer.<br>
+<br>
+Finally, your hasted main hand swing lands (count: 3). Flurry's already gone, so it gets the normal timer. One Flurry proc, three hasted swings.<br>
+<br>
+Even in unusual situations, for example where your main hand attacks twice at the start of the Flurry, it should still provide three hasted swings. Let's say your main hand crits. You get the Flurry buff (remaining: 3) and your main hand gets the hasted timer.<br>
+<br>
+Now your main hand's hasted attack lands (count: 1) and eats a Flurry charge (remaining: 2). It gets the hasted timer.<br>
+<br>
+Your offhand's attack lands without haste (count: 1). It eats a Flurry charge (remaining: 1) and gets the hasted timer.<br>
+<br>
+Your main hand's second hasted attack lands (count: 2). It eats the last Flurry charge and gets the regular timer.<br>
+<br>
+Your offhand's hasted attack lands (count: 3). One proc, three hasted swings.<br>
+<br>
+----<br>
+<br>
+In conclusion: the charge behavior of Flurry should guarantee that no more than three swings [which wouldn't have already been hasted] get hasted, regardless of how many times you crit while already having Flurry up. It should be independent of how many weapons you have equipped, as well. During my time playing a dual wield enhancement shaman, I observed the behavior of Flurry in-game to be consistent with my above model. It is likely that the unusual behavior experienced by Disquette is a result of lag.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+		<!-- edit note -->
+			<div class="smallfont">			<hr size="1" style="color:#FFFFFF">
+				<em>
+				Last edited by Vulajin : 06/12/07 at <span class="time">8:35 PM</span>.
+				Reason: added conclusion
+				</em>
+			</div>
+		<!-- / edit note -->
+		
+	
+	</td></tr><tr><td><a id="Post49" href="#Post49">#49</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/12/07, 8:36 PM">Patch 2.1.1</span></td><td>• Disquette</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_384960"><!-- google_ad_section_start -->That's a good piece of insight on slice and dice as a testing mechanism for verifying that flurry wouldn't haste an attack mid swing.  I also agree with you on the single wielding weapon situation.<br>
+<br>
+For the dual wield, however, how would you reconcile what you wrote with the chart shown here: <a href="/web/20081110043404/http://elitistjerks.com/attachments/f31/a615d1181629064-melee_combat_how_does_flurry_work/flurry_definitive_3.jpg" target="_blank">http://elitistjerks.com/attachment.p...5&amp;d=1181629064</a><br>
+<br>
+Note that the MH is a 2.6 weapon (hasted = 2.0 speed), and the OH is a 2.8 weapon (haste = 2.15 speed).<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post50" href="#Post50">#50</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/12/07, 8:50 PM">Patch 2.1.1</span></td><td>◊ Vulajin</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_384973"><!-- google_ad_section_start -->Hate to ask, but were there any parries in there? ;-)<br>
+<br>
+Seriously though, I wouldn't reconcile it with what I wrote. It's very curious. One Flurry proc, five hasted attacks. It's consistent with Flurry not affecting ongoing swings from the other hand when it procs, but it's not consistent with...well, just about anything else. Do you have any other instances of that happening?<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post51" href="#Post51">#51</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/12/07, 8:53 PM">Patch 2.1.1</span><br /><span>Edited on</span><span title="undefined undefined undefined">undefined</span></td><td>seku</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_384978"><!-- google_ad_section_start -->(excuse me for my English)<br>
+<br>
+If you were to prove the cause is lag. Could it be possible, (with a proper stochastic model of server lag) to improve your dps?<br>
+Does someone have some data about WoW servers' lag modelisation?<br>
+<br>
+Does someone have some data on tanked mobs (no parry)?<br>
+Is it possible to get some lag data with these?<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+		<!-- edit note -->
+			<div class="smallfont">			<hr size="1" style="color:#FFFFFF">
+				<em>
+				Last edited by seku : 06/12/07 at <span class="time">9:18 PM</span>.
+				
+				</em>
+			</div>
+		<!-- / edit note -->
+		
+	
+	</td></tr><tr><td><a id="Post52" href="#Post52">#52</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/12/07, 9:59 PM">Patch 2.1.1</span><br /><span>Edited on</span><span title="undefined undefined undefined">undefined</span></td><td>• Disquette</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_385036"><!-- google_ad_section_start -->Hey all, after my first tests, when Slant pointed out that parry was affecting the results, I've specifically left in *all* parry entries, and typically don't use them in the example data sets I post because they can change things around.<br>
+<br>
+And yes Vulajin, my other attachments in page two of this thread also show similarly weird behavior.<br>
+<br>
+Now, on to the most recent tests (dual 1.4 speed weapons).  I'm not sure if lag is involved or not.<br>
+<br>
+Oh, and before the screenshots, I must say I'm always impressed when someone writes "excuse me for my English" and then puts together a better constructed post than most American high school kids would :-)<br>
+<br>
+So your question, seku...  Yes, I think by combing lag with a high hit rate, you could actually cheat the system, but WoW wouldn't be very enjoyable with the amount it would take to achieve a meaningful dps boost.  It's also interesting to me that people using fast weapons probably don't realize that one of the reasons they're not as far behind in dps tests is because of lag &gt;.&lt;<br>
+<br>
+Ok, so the pics and analysis...<br>
+<br>
+Pic 1 is a very standard eventlog readout - one crit and 4 attacks within the flurry boundaries.  <br>
+<br>
+Occasionally, however, when lag is bad, you get results like screenshot 2, where you have a single crit and <b>*six*</b> attacks are within the flurry boundaries.<br>
+<br>
+Pic 3 is an example of 7 flurried attacks happening after a crit/flurry string.<br>
+<br>
+I *think* this data is meaningful, but it's hard to say since the combat log isn't useful for showing weapons as flurried or not - lag makes it too difficult to say when a 1.4 speed weapon is flurried based on combat log parsing.  Also, I think a legitimate case could be made that having same-speed weapons influences the outcome.  I don't know that for sure, however, and would have to do yet another test ( /cry).<br>
+<br>
+So, if weapons half the speed of the former weapons test were being used, and we didn't get 2x the number of flurried attacks (or even close to that amount), then lag isn't (the only) answer.  I don't know what to do now.<br>
+<br>
+(btw, at first I thought this was lag, but i went back over the data from previous posts, and realized i was just seeing what I *expected* to see - Trying to be objective, I'm now thinking that this looks a lot like the other tests).<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+		<!-- attachments -->
+			<div style="padding:3px">
+			
+			
+				<fieldset class="fieldset">
+					<legend>Attached Thumbnails</legend>
+					<div style="padding:3px">
+					<a href="/web/20081110043424/http://elitistjerks.com/attachments/f31/a627d1181696111-melee_combat_how_does_flurry_work/flurry_fast_1crit_4_flurry.jpg"><img class="thumbnail" src="/web/20081110043424im_/http://elitistjerks.com/attachments/f31/a627d1181696111t-melee_combat_how_does_flurry_work/flurry_fast_1crit_4_flurry.jpg" border="0" alt="flurry_fast_1crit_4_flurry.jpg"></a>
+&nbsp;<a href="/web/20081110043424/http://elitistjerks.com/attachments/f31/a628d1181696122-melee_combat_how_does_flurry_work/flurry_fast_1crit_6_flurry.jpg"><img class="thumbnail" src="/web/20081110043424im_/http://elitistjerks.com/attachments/f31/a628d1181696122t-melee_combat_how_does_flurry_work/flurry_fast_1crit_6_flurry.jpg" border="0" alt="flurry_fast_1crit_6_flurry.jpg"></a>
+&nbsp;<br><br><a href="/web/20081110043424/http://elitistjerks.com/attachments/f31/a629d1181696131-melee_combat_how_does_flurry_work/flurry_fast_critstring_7_flurry.jpg"><img class="thumbnail" src="/web/20081110043424im_/http://elitistjerks.com/attachments/f31/a629d1181696131t-melee_combat_how_does_flurry_work/flurry_fast_critstring_7_flurry.jpg" border="0" alt="flurry_fast_critstring_7_flurry.jpg"></a>
+&nbsp;
+					</div>
+				</fieldset>
+			
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			</div>
+		<!-- / attachments -->
+		
+
+		
+		<!-- edit note -->
+			<div class="smallfont">			<hr size="1" style="color:#FFFFFF">
+				<em>
+				Last edited by Disquette : 06/12/07 at <span class="time">10:05 PM</span>.
+				
+				</em>
+			</div>
+		<!-- / edit note -->
+		
+	
+	</td></tr><tr><td><a id="Post53" href="#Post53">#53</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/12/07, 10:50 PM">Patch 2.1.1</span></td><td>◊ Xerophyte</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_385054"><!-- google_ad_section_start -->If the lag is only flurry fading later than it should and not cumulative with earlier charges then the effect wouldn't be so extreme as 2x the number of Flurried hits, you'd only see an increased frequency of 3+ streaks, with more streaks of 5-6 hits within a non-chain flurry than with slow weapons. However, your fraps-sync test would appear to mean we can discard that explanation. Which sorta puts me at a loss ... it's annoying when your pet theory gets shot down. <br>
+<br>
+Is there any more information to be gleaned from the client than what the combat log says? Do any events fire when Flurry charges change? My wow lua chops are fairly weak, but if I understand correctly you can call <a href="https://web.archive.org/web/20081110043424/http://www.wowwiki.com/API_UnitBuff" target="_blank">UnitBuff()</a> and get the current stack number of your Flurry. If stack changes fire the UNIT_AURA or PLAYER_AURAS_CHANGED events it should be possible to catch them to track when Flurry charges do what they do... I think. Any one with good knowledge on the innards of the game feel like chiming in on viability here?<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post54" href="#Post54">#54</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/13/07, 8:14 AM">Patch 2.1.1</span></td><td>The Grog</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_385345"><!-- google_ad_section_start -->It is possible that these results are due to fluctuating lag?  <br>
+<br>
+For example, if the client receives 'Flurry Charge Consumed' messages from the server abnormally close together due to shifting lag, that it might discard one or more of them as echos/resend/general screwups? <br>
+<br>
+That could explain the larger odd flurries with fast weapons, as it would be easier for charge consumed messages to get lagged on top of each other.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post55" href="#Post55">#55</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/13/07, 1:33 PM">Patch 2.1.1</span></td><td>• Disquette</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_385763"><!-- google_ad_section_start -->The Grog.  Here's something I've *never seen* in my testing so far - 2 flurry charges being used (as shown on screen) with no hits in between.  Now, that could be luck, or it could be more meaningful.  The more tests I do, fast weapons, slow weapons, whatever, without seeing that, makes me pretty certain that what you're saying is about right - When the client says "process a reduction in flurry charges", it won't do more than one at a time, and it will wait till the server has said "ok, I hear you, you've reduced it by one" before it does another.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post56" href="#Post56">#56</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/15/07, 5:36 AM">Patch 2.1.1</span><br /><span>Edited on</span><span title="undefined undefined undefined">undefined</span></td><td>seku</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_388149"><!-- google_ad_section_start -->May you emulate some 1000+ ms lag while holding some fast weapons+haste to find out if this behaviour is systematic? (and exploitable :P)<br>
+I'm sorry I can't do much, I'm currently enduring exams.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+		<!-- edit note -->
+			<div class="smallfont">			<hr size="1" style="color:#FFFFFF">
+				<em>
+				Last edited by seku : 06/15/07 at <span class="time">5:46 AM</span>.
+				
+				</em>
+			</div>
+		<!-- / edit note -->
+		
+	
+	</td></tr><tr><td><a id="Post57" href="#Post57">#57</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/18/07, 1:52 PM">Patch 2.1.1</span></td><td>Amorpheus</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_391124"><!-- google_ad_section_start -->What do you reckon are good weapon speeds for flurry? Or does it not matter that much? I'm planning to get the season 2 arena weapons but the offhands are all 1.5 speed... I'd like something faster than "main hand speed" but 1.5 looks like it'll waste more charges on offhand than necessary. Fist weapons are 2.6/1.8 though...<br>
+<br>
+Let's assume the 2.6 MH isn't hasted but the 1.5 OH is - the offhand will hit twice between mainhand hits and that just seems terrible to me. With a 1.8 OH in the worst case they would still alternate. Am I worrying about nothing here or will this impact flurry significantly?<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post58" href="#Post58">#58</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/19/07, 9:45 AM">Patch 2.1.2</span></td><td>D4vE</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_392240"><!-- google_ad_section_start -->Just a suggestion:<br>
+<br>
+Grab a tank to help you testing and perform all attacks from behind to avoid the influence of parry on your data. At least it would rule out the "a parry hasted attack does not consume a flurry charge" theory, if you get more than 4 hasted attacks after a crit.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post59" href="#Post59">#59</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/19/07, 9:52 AM">Patch 2.1.2</span></td><td>Pater</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_392247"><!-- google_ad_section_start -->For the benefit of the warriors in this thread, I'm cross-posting a link to a small parsing mod I wrote to test Flurry charge consumption.<br>
+<br>
+<a href="https://web.archive.org/web/20081110043424/http://wowinterface.com/downloads/info7269-FlurryLog.html" target="_blank">http://wowinterface.com/downloads/in...FlurryLog.html</a><br>
+<br>
+It's a workaround that uses the say channel and chat (not combat) logging to output you hits, misses, and flurry charges.  Not suitable for use near anyone else because it spams the say channel, but perfect for Blasted Lands servants.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post60" href="#Post60">#60</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/19/07, 10:15 AM">Patch 2.1.2</span></td><td>• Disquette</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_392281"><!-- google_ad_section_start --><div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:0px"></div>
+	<table cellpadding="3" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border:1px inset">
+			
+				<div>
+					Originally Posted by <strong>D4vE</strong>
+					<a href="/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post392240" rel="nofollow"></a>
+				</div>
+				<div style="font-style:italic">Just a suggestion:<br>
+<br>
+Grab a tank to help you testing and perform all attacks from behind to avoid the influence of parry on your data. At least it would rule out the "a parry hasted attack does not consume a flurry charge" theory, if you get more than 4 hasted attacks after a crit.</div>
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>Yeah, it'd be nice.  my main problem is lack of people willing to test.  In order to set up a 5 person test, I had to literally pay 100 gold per person for a 30 min blasted lands session.  I do have a pally who said he'd help in the future though, so that could work.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post61" href="#Post61">#61</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/19/07, 12:30 PM">Patch 2.1.2</span></td><td>Wandre</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_392538"><!-- google_ad_section_start -->Wow you guys jump really far really fast.  I can assume a great testing group would have a few rogues and a warrior/pally tanking with rogues using slice and dice from behind so no parries got in the way.<br>
+<br>
+If you'd like to test without worrying about mobs but instead using player tests why not just go into a PVP area and get a mage to cast slow or a warrior to use thunderclap.  I think you could at least get some good data on weather or not a swing can be slowed in mid swing.<br>
+<br>
+Grab a nice 3.60 speed 2H wep and have a war thunderclap you.  You should be able to time things easier with the slow 3.6 and you can do it for hours without worrying about mob death or respawns.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post62" href="#Post62">#62</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/19/07, 2:01 PM">Patch 2.1.2</span></td><td>Maratai</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_392708"><!-- google_ad_section_start -->Just use a Bear Tank.  No parry.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post63" href="#Post63">#63</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/02/07, 5:36 AM">Patch 2.1.2</span></td><td>Freyalis</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_407381"><!-- google_ad_section_start -->Hi Guys, <br>
+<br>
+I'm just trying to iron out some facts about flurry both for my own purposes and to add to my collection of Enhancement theorycraft files I'm building rapidly on my PC.<br>
+<br>
+We Know that:<br>
+<br>
+* Flurry reduces the attack speed of your weapons by a factor of 1.3<br>
+* Attacks that have been launched Prior to a Flurry proc ie. Mid swing are not hasted.<br>
+* Any auto attack that is launched while flurry is active has its speed hasted.<br>
+* Attacks that have been launched with the flurry haste are not de-hasted if flurry wears off while the attacks are in mid swing.<br>
+<br>
+* A Crit with any white or Yellow melee attack will proc / refresh flurry.<br>
+* Yellow melee attacks do not consume flurry charges.<br>
+* Regular melee hits, glancing blows, and blocked hits all consume a charge.<br>
+      Q. Does a hit that is fully blocked (ie 0 dmg) still consume a charge?<br>
+* Missed hits do not consume charges.<br>
+      Q. Does a parried hit consume a charge? I would think not as is doesn't land<br>
+<br>
+Known flurry bugs:<br>
+<br>
+* When weapon speed is syncronised in a lag free environment, usually created by pre-engaging auto-attack before entering melee range whilst using 2 equal speed weapons, 4 flurried attacks are generated with the 3 charges. (This is fairly obvious to see given the rules for when attacks are hasted as written above)<br>
+<br>
+Unknown flurry bugs:<br>
+<br>
+* Flurry strings of irregular lengths have been tracked in combat logs, anywhere from 2 - 7 flurried swings using 2 different speed weapons, and 2-4 swings using only 1 weapon.<br>
+* Lag is effecting the consumption of flurry charges, particularly when 2 attacks land very close together.<br>
+<br>
+<br>
+In regards to the questions above i would love to just dive into game and test them myself right now but my game card ran out last week, and due to my wedding coming up in 3 weeks time i wont be playing for a little while =P.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post64" href="#Post64">#64</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/02/07, 8:52 AM">Patch 2.1.2</span></td><td>• Disquette</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_407448"><!-- google_ad_section_start -->The only new information I have at the moment is really making me cringe.  I tested 6 different weapon speed configurations for 12minutes+ each.  These were:<br>
+<br>
+2.6/2.6, 2.6/2.0, 2.6/1.4, 2.0/2.0, 2.0/1.4, and 1.4/1.4<br>
+<br>
+The only combination which showed an excessive number of extra attacks, given my crit rate, compared to the number predicted by using the flurry closed-form formula was the 1.4/1.4<br>
+<br>
+That is, all other were within 1.2% of the predicted value using 1-(1-CritRate)^3  as the chance for an attack to be flurried.<br>
+<br>
+I'm not sure how you came up with the known fact of: <br>
+<div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:0px"></div>
+	<table cellpadding="3" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border:1px inset">
+			
+				* When weapon speed is syncronised in a lag free environment, usually created by pre-engaging auto-attack before entering melee range whilst using 2 equal speed weapons, 4 flurried attacks are generated with the 3 charges. (This is fairly obvious to see given the rules for when attacks are hasted as written above)
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>Maybe to explain my confusion with this fact, I can post some combat logs of attacks showing that even 2.6/2.6 weapons get way out of sync in combat logs.  I just don't buy the equal-speed bonus yet.  When I can post from my other computer which has this weekend's testing data, you'll see what I mean.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post65" href="#Post65">#65</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/02/07, 8:58 AM">Patch 2.1.2</span></td><td>dukes</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_407452"><!-- google_ad_section_start --><div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:0px"></div>
+	<table cellpadding="3" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border:1px inset">
+			
+				<div>
+					Originally Posted by <strong>Disquette</strong>
+					<a href="/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post407448" rel="nofollow"></a>
+				</div>
+				<div style="font-style:italic">The only new information I have at the moment is really making me cringe.  I tested 6 different weapon speed configurations for 12minutes+ each.  These were:<br>
+<br>
+2.6/2.6, 2.6/2.0, 2.6/1.4, 2.0/2.0, 2.0/1.4, and 1.4/1.4<br>
+<br>
+The only combination which showed an excessive number of extra attacks, given my crit rate, compared to the number predicted by using the flurry closed-form formula was the 1.4/1.4<br>
+<br>
+That is, all other were within 1.2% of the predicted value using 1-(1-CritRate)^3  as the chance for an attack to be flurried.<br>
+<br>
+I'm not sure how you came up with the known fact of: <br>
+<br>
+<br>
+Maybe to explain my confusion with this fact, I can post some combat logs of attacks showing that even 2.6/2.6 weapons get way out of sync in combat logs.  I just don't buy the equal-speed bonus yet.  When I can post from my other computer which has this weekend's testing data, you'll see what I mean.</div>
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div><br>
+Are you sure that the reason they get out of sync is because of flurry? Looking towards the middle of this thread, there were some comments made about parry speeding up attack speed, which I assume only affects MH swings, and that could be throwing them out of wack if you were solo attacking one of the BL servants.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post66" href="#Post66">#66</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/02/07, 10:44 AM">Patch 2.1.2</span></td><td>• Disquette</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_407524"><!-- google_ad_section_start --><div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:0px"></div>
+	<table cellpadding="3" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border:1px inset">
+			
+				<div>
+					Originally Posted by <strong>dukes</strong>
+					<a href="/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post407452" rel="nofollow"></a>
+				</div>
+				<div style="font-style:italic">Are you sure that the reason they get out of sync is because of flurry? Looking towards the middle of this thread, there were some comments made about parry speeding up attack speed, which I assume only affects MH swings, and that could be throwing them out of wack if you were solo attacking one of the BL servants.</div>
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>pure combatlog parsing with no parries also shows it.  I'm on my other computer now working with the lag model.  I think you're going to be surprised with the data when I tablulate and post it.<br>
+<br>
+It's comparing a simulation with no lag jitter against a simulation with lots of lag jitter versus the closed-form theory.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post67" href="#Post67">#67</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/02/07, 11:29 AM">Patch 2.1.2</span><br /><span>Edited on</span><span title="undefined undefined undefined">undefined</span></td><td>Ailee</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_407552"><!-- google_ad_section_start -->I've noticed that with auto shot, the haste effect does not apply until the following auto shot. I'm guessing it would work the same or similar to auto attacks. Food for thought.<br>
+<br>
+Edit: It does also seem to apply the opposite way; If an attack starts before the haste is removed, it'll carry through until that one is finished.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+		<!-- edit note -->
+			<div class="smallfont">			<hr size="1" style="color:#FFFFFF">
+				<em>
+				Last edited by Ailee : 07/02/07 at <span class="time">11:39 AM</span>.
+				
+				</em>
+			</div>
+		<!-- / edit note -->
+		
+	
+	</td></tr><tr><td><a id="Post68" href="#Post68">#68</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/02/07, 11:31 AM">Patch 2.1.2</span></td><td>• Disquette</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_407555"><!-- google_ad_section_start -->Yes, that part I think we can all agree on - with the exception of parrying an incoming attack, there are very few things that haste one of your attacks mid swing.  The rogue that gave the example of SnD earlier gave one such instance of confirmation of this.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post69" href="#Post69">#69</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/03/07, 9:37 AM">Patch 2.1.2</span><br /><span>Edited on</span><span title="undefined undefined undefined">undefined</span></td><td>• Disquette</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_408445"><!-- google_ad_section_start -->I've attached the data I was talking about.<br>
+<br>
+Sim850.  Lag is worked into the model as:<br>
+Next swing = Lag/2 - Random()*Lag.  (So it averages out at regular hit rate)<br>
+Flurry = grace period if swing happens within Lag range.<br>
+Lag = 850 milliseconds.<br>
+<br>
+Please correct this part if you think I've done this wrong.<br>
+Theory.  For this row, theory says number of hits = <br>
+Total non-flurry-talent attacks + (30% * FlurryUptime% * NonFlurryTalentAttacks)<br>
+FlurryUptime % = 1 - (1-Crit)^3<br>
+<br>
+Example with 20% crit, 2600 seconds, and dual wielding 2.6 speed weapons.<br>
+<br>
+nonFlurryTalentAttacks = (2600/2.6) * 2 = 1000 * 2 = 2000<br>
+FlurryUptime = 1 - .8^3 = .488<br>
+so TheoryFlurryAttacks = 2000 + (30% * 48.8% * 2000) = 2000 + 293 = 2293.<br>
+<br>
+Also of note - I'm guessing that the test data for the last column, the 2.0/2.0 is probably a bit flukey considering how off the % extra attacks is compared to all the others.  If it were at the same extra attack rate as the others (about 20%), it would also match the Sim850 results within 0.2% or so.  Of course, that needs to be tested, and me just jawboning about it doesn't do much for actual data needs :-)<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+		<!-- attachments -->
+			<div style="padding:3px">
+			
+			
+				<fieldset class="fieldset">
+					<legend>Attached Thumbnails</legend>
+					<div style="padding:3px">
+					<a href="/web/20081110043424/http://elitistjerks.com/attachments/f31/a766d1183466249-melee_combat_how_does_flurry_work/flurry_testing.jpg"><img class="thumbnail" src="/web/20081110043424im_/http://elitistjerks.com/attachments/f31/a766d1183466249t-melee_combat_how_does_flurry_work/flurry_testing.jpg" border="0" alt="flurry_testing.jpg"></a>
+&nbsp;
+					</div>
+				</fieldset>
+			
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			</div>
+		<!-- / attachments -->
+		
+
+		
+		<!-- edit note -->
+			<div class="smallfont">			<hr size="1" style="color:#FFFFFF">
+				<em>
+				Last edited by Disquette : 07/03/07 at <span class="time">9:58 AM</span>.
+				
+				</em>
+			</div>
+		<!-- / edit note -->
+		
+	
+	</td></tr><tr><td><a id="Post70" href="#Post70">#70</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/03/07, 2:40 PM">Patch 2.1.2</span></td><td>Pater</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_408966"><!-- google_ad_section_start -->I take it this was without the WF Weapon imbue?<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post71" href="#Post71">#71</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/03/07, 3:04 PM">Patch 2.1.2</span></td><td>• Disquette</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_409029"><!-- google_ad_section_start -->Correct - no enchants, no haste weapons.  Plain jane grey/white weapons and flurry only.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post72" href="#Post72">#72</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/04/07, 5:01 AM">Patch 2.1.2</span></td><td>Freyalis</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_409627"><!-- google_ad_section_start -->Very Interesting,<br>
+<br>
+I wont be giving up on the BS + 2.6 OH combo just yet then.<br>
+<br>
+<br>
+However I am still curious about whether parries, dodges, partial and full blocks consume flurry charges.<br>
+<br>
+My gut instinct says no for parry, dodge and yes for partial block, which is functionally  identical  to a crushing blow. As for full Blocks, I have no idea but its not really important as you should never see this happen by the level you can spec into flurry.<br>
+<br>
+I only ask as the somewhat dated entry for flurry in wowwiki mentions that parry/dodge/block all consume charges and that was the only information I could find on it.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post73" href="#Post73">#73</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/04/07, 2:24 PM">Patch 2.1.2</span><br /><span>Edited on</span><span title="undefined undefined undefined">undefined</span></td><td>Rezarel</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_409939"><!-- google_ad_section_start -->A minor correction: what you call FlurryUptime is the chance that a single swing will be flurried.  It is not the fraction of time you spend in the flurried state.<br>
+<br>
+Some math to show the point, similar to your sample calculation (edited to just one 2.6 speed weapon to simplify things):<br>
+<br>
+<div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:0px"></div>
+	<table cellpadding="3" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border:1px inset">
+			
+				<div>
+					Originally Posted by <strong>Disquette</strong>
+					<a href="/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post408445" rel="nofollow"></a>
+				</div>
+				<div style="font-style:italic">nonFlurryTalentAttacks = (2600/2.6) = 1000<br>
+FlurryUptime = 1 - .8^3 = .488<br>
+so TheoryFlurryAttacks = 1000 + (30% * 48.8% * 1000) = 1000 + 146 = 1146.</div>
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>Flurried attacks = 48.8% * 1146 = 559<br>
+Nonflurried attacks = 51.2% * 1146 = 587<br>
+<br>
+Time spent flurried = 559 * 2.6 / 1.3 = 1118<br>
+Time spent nonflurried = 587 * 2.6 = 1526<br>
+<br>
+Total time = 1118 + 1526 = 2644 != 2600 as originally assumed.<br>
+<br>
+<br>
+To correct for this:<br>
+FC = Flurry Chance -- what you were calling FlurryUptime<br>
+WS = Weapon Speed<br>
+<br>
+Flurry Uptime Fraction = (Time spent flurried) / (total time)<br>
+Flurry Uptime Fraction = (FC * WS / 1.3) / ((1 - FC) * WS + FC * WS / 1.3)<br>
+Flurry Uptime Fraction = (FC / 1.3) / ((1 - FC) + FC / 1.3)<br>
+<br>
+Flurry Uptime Fraction = 1 / (1.3 / FC - 0.3)<br>
+Flurry Uptime Fraction = FC / (1.3 - 0.3 * FC)<br>
+<br>
+<br>
+So, for Flurry Chance = 48.8%, Flurry Uptime Fraction = 42.3%<br>
+TheoryFlurryAttacks should be 2000 + (30% * 42.3% * 2000) = 2000 + 254 = 2254.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+		<!-- edit note -->
+			<div class="smallfont">			<hr size="1" style="color:#FFFFFF">
+				<em>
+				Last edited by Rezarel : 09/05/07 at <span class="time">5:01 PM</span>.
+				Reason: formatting
+				</em>
+			</div>
+		<!-- / edit note -->
+		
+	
+	</td></tr><tr><td><a id="Post74" href="#Post74">#74</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/04/07, 2:56 PM">Patch 2.1.2</span></td><td>• Disquette</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_409953"><!-- google_ad_section_start -->I have to run now to go to 4th festivities, but wanted to respond saying thank you, and that I figured something was wrong, but not sure what.  I appreciate the post, and will review it so that I understand it more fully tonight.<br>
+<br>
+Well my friend is taking a bit longer to get ready, so I had more time.  I agree with your analysis and explanation - thank you!  In reality it only makes things look better for the simulation instead of the closed-form, simply because the closed form already under-represents # of attacks currently.  <br>
+<br>
+I do hope that Tornhoof sees this set of posts so that he can let us know how he deals with this in his closed form method of flurry calculation.<br>
+<br>
+Thanks again.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post75" href="#Post75">#75</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/04/07, 3:38 PM">Patch 2.1.2</span></td><td>galzohar</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_409972"><!-- google_ad_section_start -->Regarding speeds, remember that while a fast offhand will consume more flurry charges, it will also proc more flurries. So overall I doubt there's a real difference between the flurry uptime for main hand when you change the speed of your offhand and vice versa. Just like 2X1.5s weapons would have the same flurry uptime as 2X3s weapons, I bet the same could be figured out for weapons of different speed - intuitively flurry uptime for each one weapon should be independant of the speeds of the weapons. Of course there may be some wierd mechanics I'm missing here so it's worth looking into, but it definitely doesn't let you assume that "fast OH consumes charges =&gt; fast OH is bad".<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post76" href="#Post76">#76</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/04/07, 8:33 PM">Patch 2.1.2</span></td><td>Xoya</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_410150"><!-- google_ad_section_start -->Well, for warriors that is definitely true, galzohar.  The problem for shamans at least is that fast offhands consume more windfury weapon procs (compared to your mainhand) than slow offhands do.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post77" href="#Post77">#77</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/05/07, 5:12 AM">Patch 2.1.2</span></td><td>galzohar</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_410374"><!-- google_ad_section_start -->As a shaman don't you want to use 2 slow weapons for stormstrike as well? should be a no-brainer ;p<br>
+Warriors are where things get more complicated.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post78" href="#Post78">#78</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/05/07, 6:41 PM">Patch 2.1.2</span><br /><span>Edited on</span><span title="undefined undefined undefined">undefined</span></td><td>Tornhoof</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_411049"><!-- google_ad_section_start --><div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:0px"></div>
+	<table cellpadding="3" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border:1px inset">
+			
+				<div>
+					Originally Posted by <strong>Disquette</strong>
+					<a href="/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/post409953.html#post409953" rel="nofollow"></a>
+				</div>
+				<div style="font-style:italic">I have to run now to go to 4th festivities, but wanted to respond saying thank you, and that I figured something was wrong, but not sure what.  I appreciate the post, and will review it so that I understand it more fully tonight.<br>
+<br>
+Well my friend is taking a bit longer to get ready, so I had more time.  I agree with your analysis and explanation - thank you!  In reality it only makes things look better for the simulation instead of the closed-form, simply because the closed form already under-represents # of attacks currently.  <br>
+<br>
+I do hope that Tornhoof sees this set of posts so that he can let us know how he deals with this in his closed form method of flurry calculation.<br>
+<br>
+Thanks again.</div>
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>Yes, I'm following the thread, I currently have the problem, that a closed form description of flurry does include the uptime produced by WF and Stormstrike procs, but at the same time, the proc rate for WF is partially dependent on the weapon speed.<br>
+That is kinda ugly and I will need to find a way around it, before I can successfully produce a closed form description of flurry with wf for now.<br>
+<br>
+<br>
+As for a closed form description for the shaman, I think flurry uptime needs to be splitted into MH and OH flurry uptime and I'll need to integrate WF and stormstrike into it.<br>
+Maybe I can get around the wf proc stuff, by assuming "each 3.15s wf will proc with dw", but we'll see.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+		<!-- edit note -->
+			<div class="smallfont">			<hr size="1" style="color:#FFFFFF">
+				<em>
+				Last edited by Tornhoof : 07/05/07 at <span class="time">6:57 PM</span>.
+				
+				</em>
+			</div>
+		<!-- / edit note -->
+		
+	
+	</td></tr><tr><td><a id="Post79" href="#Post79">#79</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/06/07, 9:47 AM">Patch 2.1.2</span></td><td>• Disquette</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_411531"><!-- google_ad_section_start -->Tornhoof, I think you have the hardest job in WoW, making a closed-form of this :-)<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post80" href="#Post80">#80</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/12/07, 6:04 PM">Patch 2.1.3</span><br /><span>Edited on</span><span title="undefined undefined undefined">undefined</span></td><td>Tornhoof</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_418421"><!-- google_ad_section_start -->Edited: Not yet ready<br>
+<br>
+To get Flurry working with WF and SS, I need to atleast model 4 swings for flurry, since with Dual 2.6s weapons, the attackspeed will be below 1s, but I'm close to presenting a flurry model for 3 charges which works with WF and Stormstrike.<br>
+<br>
+<br>
+Currently it looks like this, under the assumption of a 3s Cooldown, for faster weapons with &lt;=1.0s attackspeed, for example one string of swings.<br>
+1.0 attack speed example<br>
+F* flurried<br>
+NF* non flurried,<br>
+WF wf<br>
+SS SS<br>
+<br>
+F1,F2,F3,NF1,NF2+WF+WF, F4,F5,F6,NF3,NF4+WF+WF+SS1+SS2,F7,F8,F9<br>
+<br>
+Now for the first wf proc, NF1+NF2 can proc WF, for the second F6, NF3 and NF4, SS1,SS2 can proc flurry too<br>
+<br>
+The exact swing count necessary is dependent on the weapon speed, for slow weapons (&gt;2.6s) it should be safe to use 4 swings, for faster weapons you'll need more, for daggers certainly more than 6.<br>
+<br>
+Another approach might be, calculate the swings necessary that flurry is up 97.5%, let's say 10 swings, now calculate the amount of white swings in there and calculate the the probability that flurry procced multiple times for those swings, then calculate the probability that we can get let's say 7 charges from 10 swings and take it from here.<br>
+A proper simplification would be to say 9 charges and say what is the probability to crit 3 times in 10 swings (simple combinatorics now and substract the probability to crit 3 times in a row), this will underrate flurry a bit but will cope for missing stormstrikes or windfuries and should be fairly correct and since we just said 97.5% it should work out nicely.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+		<!-- edit note -->
+			<div class="smallfont">			<hr size="1" style="color:#FFFFFF">
+				<em>
+				Last edited by Tornhoof : 07/12/07 at <span class="time">7:41 PM</span>.
+				
+				</em>
+			</div>
+		<!-- / edit note -->
+		
+	
+	</td></tr><tr><td><a id="Post81" href="#Post81">#81</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/13/07, 9:06 PM">Patch 2.1.3</span></td><td>T.K.</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_419774"><!-- google_ad_section_start -->Sup, everyone. I did have some points i wish to share since this post was introduced in here, but coudn't register before^^<br>
+<br>
+As i checked the options u guys made about why the procs where working this way, it seems to me that u guys forgot something very importante about WoW theory in general: <br>
+<br>
+The programers boundaries and even the programing language limit.<br>
+<br>
+My point into this is that, all the available options that i saw in here where made as if the WoW universe could be created with any possibility, what is not true when u build a world based upon a programing language.<br>
+<br>
+Into a very basic level, first and foremost, about the 4 (and even more) procs that we sometimes get... i think this could be answered with a basic programing concept like true/false check:<br>
+<br>
+Moreso, all skills ,i think, work like a server active command -&gt; client passive response, but i'll get into this a bit more futher in this post...<br>
+<br>
+An example of the lol flurry procs with x number procs:<br>
+<br>
+1.0 MH crit hit *Flurry starts*<br>
+<br>
+1.1 OH hit<br>
+         Hit, so take 1 charge out. Charges left 2<br>
+         Server performs check with something like this: IF when MH hits, u have zero or minus charges, THAN stop flurry state. True or false? False = KEEP DA HASTE DAMMITT!!!<br>
+         <br>
+<br>
+1.2 MH hits ( I won't include crits or whatever besides normal hits for now)<br>
+         Hit, so take 1 charge out. Charges left 1<br>
+         Check =&gt; MH hit (true) = zero or less charges (false) =&gt; False = HASTE, HASTE, HAAASTEE!!<br>
+         <br>
+<br>
+1.3 OH hits<br>
+         Hit, so take 1 charge out. Charges left 0<br>
+         Check =&gt; MH hit (false) When it gets a OH hit, with the programing script, it cannot serve as a ruler for ending or not the charge state, so it skips this check.<br>
+<br>
+1.4 MH hits<br>
+          Hit, so take 1 charge out. Charges left -1<br>
+          Check =&gt; MH hit (true) = zero or less charges (true) =&gt; True = WTH!!! STOPIT U DAMMIT!!!!!!!! STOP FLURRY!! NOOOWWWWWWW<br>
+<br>
+   ok, although my server seems like someone about to have a heartache, this is more or less how i see the check it performs to stop or continue flurry. It get's the hand that made the flurry to pop up, and than leaves it as the ruler to decide to stop or not.<br>
+   I made the example with the MH as ruler, but is the same if u get a crit hit with the OH, and so it's it that rules the checks from that moment on.<br>
+<br>
+<br>
+    That said, what i think it's causing lot's of procs with just a simple crit proc, would be that to prevent hacking and whatever, blizzard made the programing of the game with the client only being able to inform stuff and the server taking care of decisions. With this, server only receives information and send information back, while the server procs em and see what happens everytime.<br>
+     I really think this to be the way how things work, as every single game that the client allows for abitrary commands or decisions has exploits or hacks available, because most of the time they are built with these already in, deciding tools.<br>
+     This would lead us to a situation where for any reasons varying from connection lag, lost of information into the transmition, or whatever u guys might think, the client will keep the exact same situation and commands the server sent, while the server gives no other command. As such, if the server command to stop flurrying, or to reduce a charge in mid flurry state got lost or somehow delayed, this would lead to an increase into the number of procs, in part cause of the first programing limits i said and in part for this.<br>
+       <br>
+      Right now i'm really late to get my gf, but if anyone have any interest into this or think might have any clue to solve, i might elaborate a more complex scenario with delayed information grouped with programing check limitations to see if in agrees with the results we got into those posted tests up the post.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post82" href="#Post82">#82</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/14/07, 1:17 AM">Patch 2.1.3</span></td><td>Xoya</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_419893"><!-- google_ad_section_start -->One thing to try, then, based on the most recent post:  can we somehow prolong a flurry state inevitably by removing the weapon which crit before flurry falls off?  Not that this would help our DPS at all, but it would certainly be an interesting result regardless.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post83" href="#Post83">#83</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/14/07, 2:17 PM">Patch 2.1.3</span></td><td>T.K.</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_420163"><!-- google_ad_section_start -->This wouldn't change the way the procs are counted, as although u are hitting much much less with a bare hand, u're still hitting with your MH and OH whatever the cause could be<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post84" href="#Post84">#84</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/14/07, 5:14 PM">Patch 2.1.3</span></td><td>Blightlenox</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_420283"><!-- google_ad_section_start -->T.K.'s theory sounds pretty valid after re-reading the combat logs from the above posts.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post85" href="#Post85">#85</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/16/07, 2:52 PM">Patch 2.1.3</span></td><td>Duranthor</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_421680"><!-- google_ad_section_start -->So does this mean then, that if you had a 2.6 MH and a 1.3 off hand and you crit with your main hand, you could then expect to see as many as 6 swings with your off hand under the influence of flurry before the server tells it to stop for three main hand swings?<br>
+<br>
+Could we then claim that the closer in speed your off hand weapon is to your main hand, the less chance you would get for extended flurry strings?<br>
+<br>
+In other words, fast off hands do not eat up flurry charges for warriors because the the MH holds all the counters.<br>
+<br>
+Is this what the evidence supports then?<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post86" href="#Post86">#86</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/16/07, 11:00 PM">Patch 2.1.3</span></td><td>T.K.</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_422103"><!-- google_ad_section_start -->To be honest, i really couldn't try that options, although i imagined them. At these days i had so much problems with my stupid guildmates, trying to prove them what for my enhance shammy can be good.<br>
+<br>
+Basically a retarded resto shammy estarted complaining that at our VR fight he had to burn all his mana, plus Tide totem, plus 4-5 pots just to keep me alive while the other fights where my shammy wasn't in he didn't even use 80% of his mana pool, with just rogues on the group to be healed... But whatever, i'm very pissed but this is not for this topic...<br>
+<br>
+If someone could get 2 very different speed weapons, with a very fast offhand and see how much strikes while flurried u can get, would help a lot. Myself, i discarded all fast weapons i got.<br>
+<br>
+If anyone already tried this, could please post results?<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post87" href="#Post87">#87</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/17/07, 8:56 AM">Patch 2.1.3</span></td><td>• Disquette</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_422354"><!-- google_ad_section_start --><div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:0px"></div>
+	<table cellpadding="3" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border:1px inset">
+			
+				<div>
+					Originally Posted by <strong>galzohar</strong>
+					<a href="/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/post409972.html#post409972" rel="nofollow"></a>
+				</div>
+				<div style="font-style:italic">Regarding speeds, remember that while a fast offhand will consume more flurry charges, it will also proc more flurries. So overall I doubt there's a real difference between the flurry uptime for main hand when you change the speed of your offhand and vice versa. Just like 2X1.5s weapons would have the same flurry uptime as 2X3s weapons, I bet the same could be figured out for weapons of different speed - intuitively flurry uptime for each one weapon should be independant of the speeds of the weapons. Of course there may be some wierd mechanics I'm missing here so it's worth looking into, but it definitely doesn't let you assume that "fast OH consumes charges =&gt; fast OH is bad".</div>
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>I'm sorry, somehow I missed this post earlier.  My contention is that weapon speed has a lot to do with % of flurried attacks.  This is because of the amount of yellow attacks in a 10 second period compared to the number of white attacks in the 10 second period.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post88" href="#Post88">#88</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/18/07, 5:49 PM">Patch 2.1.3</span><br /><span>Edited on</span><span title="undefined undefined undefined">undefined</span></td><td>Petit_Mal</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_424207"><!-- google_ad_section_start -->I would suggest that there is a very simple solution to this question.<br>
+<br>
+Buffs last, at minimum, until the end of the current, serverside, second. <br>
+<br>
+That is- once a buff has been consumed, it does not fade until the next second. In each of the cases where you were getting 6 attacks after gaining flurry, pairs of your subsequent attacks occurred, each time, within the same second. During each of those seconds, the server registered that you got "at least one" attack, and so a single aura of flurry faded at the end of that second.<br>
+<br>
+This mechanic can amusingly be seen with the warrior ability "Spell Reflect" wherein being struck by a spell procs a hidden "reflection" buff that lasts for 1 second. If you get hit by more than one spell during that second, you reflect all of them.<br>
+<br>
+Given general buff mechanics, this seems like the most parsimonious explanation.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+		<!-- edit note -->
+			<div class="smallfont">			<hr size="1" style="color:#FFFFFF">
+				<em>
+				Last edited by Petit_Mal : 07/18/07 at <span class="time">5:54 PM</span>.
+				
+				</em>
+			</div>
+		<!-- / edit note -->
+		
+	
+	</td></tr><tr><td><a id="Post89" href="#Post89">#89</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/18/07, 6:19 PM">Patch 2.1.3</span></td><td>• Disquette</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_424247"><!-- google_ad_section_start -->Interesting, thank you for the insight and example :-)<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post90" href="#Post90">#90</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/18/07, 7:24 PM">Patch 2.1.3</span></td><td>Petit_Mal</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_424301"><!-- google_ad_section_start -->np. I was just glad to have something to contribute to these forums. ;-)<br>
+<br>
+(The name of the hidden aura gained is actually "Reflect Spells." My bad.)<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post91" href="#Post91">#91</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/18/07, 7:26 PM">Patch 2.1.3</span></td><td>Tornhoof</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_424305"><!-- google_ad_section_start --><div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:0px"></div>
+	<table cellpadding="3" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border:1px inset">
+			
+				<div>
+					Originally Posted by <strong>Petit_Mal</strong>
+					<a href="/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post424207" rel="nofollow"></a>
+				</div>
+				<div style="font-style:italic">Given general buff mechanics, this seems like the most parsimonious explanation.</div>
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>I even think that this (next second) is actually a dynamic timeframe, load dependent timeframe, e.g. higher in instances on dedicated servers and lower on the outside<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post92" href="#Post92">#92</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/" target="_blank">Source</a></td><td><span>Posted on</span><span title="09/04/07, 12:01 PM">Patch 2.1.3</span></td><td>p o j</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_468112"><!-- google_ad_section_start -->I realize this topic has fallen from recent interest, but was wondering if anyone has done any WF totem testing other than Tornhoof or in addition to his. More than likely the obvious guess is the answer, but I feel it's worthwhile to just double-check.<br>
+Have any discoveries or insights been made as to server lag between WF procs (or Sword Spec procs) affecting consumed flurry charges? Since lag seems to be the fallback safety response for the extended flurry state, is there any chance it could work against a player? Or is the game coding such that doesn't allow this sort of mix-up?<br>
+<br>
+Obviously this is of interest as a dps warrior gets a significant boost by both flurry and WF.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post93" href="#Post93">#93</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/" target="_blank">Source</a></td><td><span>Posted on</span><span title="09/10/07, 4:43 AM">Patch 2.1.3</span></td><td>anticide</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_473046"><!-- google_ad_section_start --><div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:0px"></div>
+	<table cellpadding="3" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border:1px inset">
+			
+				<div>
+					Originally Posted by <strong>Vulajin</strong>
+					<a href="/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/post377964.html#post377964" rel="nofollow"></a>
+				</div>
+				<div style="font-style:italic">Well, let's start with what we know about Flurry:<br>
+<br>
+- The length of time a weapon swing will take is determined after the previous swing with that weapon.<br>
+- When you crit, you gain a buff with three charges.<br>
+<b>- When you swing while Flurry is active, the time-to-next-swing is only 70% of the normal length.</b><br></div>
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>Isn't time-to-next-swing 77% of the normal length? Assuming 30% haste flurry.<br>
+<br>
+3.0 weapon hasted 30% swings (3.0 / 1.3) = 2.30.  (2.30 / 3.0 ) ~ .77.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post94" href="#Post94">#94</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/" target="_blank">Source</a></td><td><span>Posted on</span><span title="09/11/07, 10:08 PM">Patch 2.1.3</span></td><td>Machinator</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_475081"><!-- google_ad_section_start -->I looked through the thread and the question was asked if dodge, parry, block, miss take a flurry charge and I didnt see it answered. I read that miss might not, so I want to double check if they use charges or not.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="Post95" href="#Post95">#95</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/" target="_blank">Source</a></td><td><span>Posted on</span><span title="10/05/07, 8:03 AM">Patch 2.2.2</span></td><td>WazAg</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_499800"><!-- google_ad_section_start --><div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:0px"></div>
+	<table cellpadding="3" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border:1px inset">
+			
+				<div>
+					Originally Posted by <strong>galzohar</strong>
+					<a href="/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/post409972.html#post409972" rel="nofollow"></a>
+				</div>
+				<div style="font-style:italic">Regarding speeds, remember that while a fast offhand will consume more flurry charges, it will also proc more flurries. So overall I doubt there's a real difference between the flurry uptime for main hand when you change the speed of your offhand and vice versa. Just like 2X1.5s weapons would have the same flurry uptime as 2X3s weapons, I bet the same could be figured out for weapons of different speed - intuitively flurry uptime for each one weapon should be independant of the speeds of the weapons. Of course there may be some wierd mechanics I'm missing here so it's worth looking into, but it definitely doesn't let you assume that "fast OH consumes charges =&gt; fast OH is bad".</div>
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>I've never been a proponent of the "Fast OH consumes charges" school of thought, because, when doing my own study -- which is, admittedly, less thorough and intricate than the current thread's research -- I found the only occasion this could be a true statement, given a logical (i.e. 3 straight swings) flurry count is if you were to equip an offhand that was more than twice as fast as your mainhand, to have your mainhand crit and be instantaneously followed up by a sequence of three offhand attacks.<br>
+<br>
+Given that, at best, I can think of one weapon combo outside of the Kael fight that achieves this (Dragonstrike (2.7) + Searing Sunblade (1.3), and taking into account the one-second aura theory, there is no reason not to use a fast offhand, and, in fact, extra duration for each flurry proc speaks to a fast offhand being even better.<br>
+<br>
+I've always followed this logic, but hopefully these arguments will keep warriors, at least, from reducing their dps via. faulty assumptions.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr></tbody></table></body></html>

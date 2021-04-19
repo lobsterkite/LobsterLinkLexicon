@@ -29,3 +29,11 @@ tr td:nth-of-type(5) {
 body{
     background:#DCDDD3;
 }
+/* Item colors */
+.redname,    .quality6 { color: #FF0000; font-weight: bold; }
+.orangename, .quality5 { color: #FF8000; font-weight: bold; }
+.purplename, .quality4 { color: #A335EE; font-weight: bold; }
+.bluename,   .quality3 { color: #0070DD; font-weight: bold; }
+.greenname,  .quality2 { color: #1EFF00; font-weight: bold; }
+.whitename,  .quality1 { color: #9D9D9D; font-weight: bold; }
+.greyname              { color: #6A6A6A; font-weight: bold; }
