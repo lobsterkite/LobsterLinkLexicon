@@ -25,9 +25,17 @@ $(document).ready( function () {
             	return data;
             }
         }],
+        "autoWidth":false,
         "pageLength":100,
         "lengthMenu": [25,50,75,100,250],
-        "dom":'<lfrtip<t>p>'
+        "dom":'<lfrtip<t>p>'/*,
+        "responsive":{
+        	"details":{
+        		"display":$.fn.dataTable.Responsive.display.childRowImmediate,
+        		"type": 'none',
+                "target": ''
+        	}
+        }*/
     } );
     table.on('page.dt', function() {
 	  $('html, body').animate({

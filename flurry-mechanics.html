@@ -1,4 +1,715 @@
-<html><link rel="stylesheet" href="styles.css"><link rel="stylesheet" type="text/css" href="assets/datatables.min.css"><script type="text/javascript" charset="utf8" src="assets/jquery-3.3.1.min.js"></script><script type="text/javascript" src="assets/datatables.min.js"></script><script type="text/javascript" src="assets/main.js"></script><body><table><thead><th>Post #</th><th>Source</th><th>Dates</th><th>Author</th><th>Post</th></tr></thead><tbody><tr><td><a id="post379228" href="#post379228">#26</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post379228" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/07/07, 7:24 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) -->Wandre<!-- google_ad_section_end --></td><td>
+<html><link rel="stylesheet" href="styles.css"><link rel="stylesheet" type="text/css" href="assets/datatables.min.css"><script type="text/javascript" charset="utf8" src="assets/jquery-3.3.1.min.js"></script><script type="text/javascript" src="assets/datatables.min.js"></script><script type="text/javascript" src="assets/main.js"></script><body><table><thead><th>Post #</th><th>Source</th><th>Dates</th><th>Author</th><th>Post</th></tr></thead><tbody><tr><td><a id="post377481" href="#post377481">#1</a></td><td><a href="https://web.archive.org/web/20080204015428/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/#post377481" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/06/07, 3:21 PM">Patch 2.1.1</span></td><td><span class="diams" id="bronze">♦</span>&nbsp;Disquette</td><td>
+	
+	
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				
+				<strong>[Melee Combat] How does Flurry Work?</strong>
+			</div>
+			<hr size="1" style="color:#FFFFFF">
+			<!-- / icon and title -->
+		
+		
+		<!-- message -->
+		<div id="post_message_377481"><b>Background</b><br>
+Over at the Enhancement Shaman thread, we have built dps simulators.  Upon testing these simulators, we are finding that white hits are under-reported significantly.  It seems obvious that Flurry being "messed up" is responsible for this.  This throws a huge wrench in any calculations of Shaman or DPS warrior theory crafting.<br>
+<br>
+<b>Tooltip - What Flurry *should* do</b><br>
+<div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:0px"><img src="assets/citation.gif" border="0"></div>
+	<table cellpadding="3" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border:1px inset">
+			
+				Increases your attack speed by 30% for your next 3 swings after dealing a critical strike.
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>That seems almost straight-forward.  Now, perhaps you could read it as "finish all swings that are in-flight, then hasten the next 3".  Or, "hasten all attacks, including ones mid-flight, until you have swung 3 times".  Either way, 3 is a pretty critical number.<br>
+<br>
+<b>The problem tested</b><br>
+<br>
+1) Get two weapons of varying speeds, with as large a delay as possible. <br>
+- I don't want to have the synchronized hits causing any funny business<br>
+- The larger the delay, the less that ping time will affect the results<br>
+2) Go hit a blasted lands mob, turn on combat log, making sure no weapons/armor has procs that would affect the outcome (mongoose, drakefist hammer, abacus, etc)<br>
+<br>
+<b>The problem illustrated</b><br>
+In the attached screenshot, I think the problem is very clearly illustrated.  A critical strike is affecting up to 6 hits with the flurry buff.  Here's how to read the chart:<br>
+<br>
+blue shading - in a flurry state<br>
+pink shading - the last crit before flurry fades.  At this point, only 3 more attacks should be affected<br>
+yellow shading - the number of attacks before combat log reads "Flurry fades from you."<br>
+no shading - period of non-fluried attacks.<br>
+grey/white column shading for "average" - This shows how many rows I'm actually averaging.<br>
+<br>
+In short, not only does the combat log read "You gain flurry" and "Flurry fades from you", but the average swing speed in those periods actually agrees with the combat log.  That is, this does not seem to be server-client lag.  This is why I have the average columns there - so you can verify that when the combat log says flurry IS NOT active, it is indeed about 2.6speed mainhand, and 2.8speed offhand.  Also, when flurry IS active, the speeds correctly register at an average about 2.0 mainhand and 2.15 offhand.<br>
+<br>
+Seeing as how two classes are highly flurry dependent for their damage, I do believe it warrants its own thread.<br>
+<br>
+I'll be happy to provide the raw combat log if asked.</div>
+		<!-- / message -->
+	
+		
+		<!-- attachments -->
+			<div style="padding:3px">
+			
+			
+		
+			
+			
+			
+				<fieldset class="fieldset">
+					<legend>Attached Images</legend>
+					<table cellpadding="0" cellspacing="3" border="0">
+					<tbody><tr>
+	<td><img class="inlineimg" src="/web/20080204015428im_/http://elitistjerks.com/images/chestnut/attach/gif.gif" alt="File Type: gif" width="16" height="16" border="0" style="vertical-align:baseline"></td>
+	<td><a href="https://web.archive.org/web/20080204015428/http://elitistjerks.com/attachments/f40/a562d1181154060-melee_combat_how_does_flurry_work/flurry_stuff.gif">flurry_stuff.gif</a> <font color="#000000" style="font-size: 10px">(48.0 KB, 703 views)</font></td>
+</tr>
+					</tbody></table>
+					</fieldset>
+			
+			
+			
+			
+			
+			
+			</div>
+		<!-- / attachments -->
+		
+
+		
+	
+	</td></tr><tr><td><a id="post377698" href="#post377698">#2</a></td><td><a href="https://web.archive.org/web/20080204015428/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/#post377698" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/06/07, 5:39 PM">Patch 2.1.1</span></td><td><span class="diams" id="bronze">♦</span>&nbsp;Lactose</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_377698">Is this consistent? As in, does Flurry sometimes fade after 3 (or rather, less than 6) attacks?<br>
+Just by looking at these numbers, it kinda seems like the <i>your next 3 swings</i> part is applied to each weapon, instead of total swings?</div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="post377727" href="#post377727">#3</a></td><td><a href="https://web.archive.org/web/20080204015428/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/#post377727" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/06/07, 6:05 PM">Patch 2.1.1</span></td><td>WibbleNZ</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_377727">It would be interesting to see results with different weapon speeds, it may be that flurry lasts for your next 3 MH swings.</div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="post377749" href="#post377749">#4</a></td><td><a href="https://web.archive.org/web/20080204015428/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/#post377749" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/06/07, 6:21 PM">Patch 2.1.1</span></td><td><span class="diams" id="bronze">♦</span>&nbsp;Disquette</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_377749">I pulled out just the "really interesting" ones.  Sometimes it lasts for 4 swings (2MH, 2OH), and, rarely, it lasts for 2 swings.<br>
+<br>
+The 4 and 2 swings ones seem to happen when there is a single crit that gets flurried, and, as you'll notice, both of those sections i highlighted happen on the end of a flurry train that's already going.<br>
+<br>
+I have to finish the parse though to get more data.<br>
+<br>
+I'm actually very surprised at the lack of interest in this topic so, considering how important it is in determining dps.  Thank you both for the questions/comments, and I'll post an update tomorrow when I've done more datamining.</div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="post377768" href="#post377768">#5</a></td><td><a href="https://web.archive.org/web/20080204015428/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/#post377768" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/06/07, 6:36 PM">Patch 2.1.1</span></td><td><span class="diams" id="green">♦</span>&nbsp;Apate</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_377768"><div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:0px"><img src="assets/citation.gif" border="0"></div>
+	<table cellpadding="3" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border:1px inset">
+			
+				<div>
+					Originally Posted by <strong>Disquette</strong>
+					<a href="#post377749" rel="nofollow"><img class="inlineimg" src="assets/viewpost.gif" border="0" alt="View Post"></a>
+				</div>
+				<div style="font-style:italic">I'm actually very surprised at the lack of interest in this topic so, considering how important it is in determining dps.  Thank you both for the questions/comments, and I'll post an update tomorrow when I've done more datamining.</div>
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>Please don't interpret silence as a lack of interest.  I, for one, just don't have anything to add (aside form this), but I look forward to more testing.  The mechanics of flurry are simply something I never really thought to question beyond the tooltip.</div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="post377810" href="#post377810">#6</a></td><td><a href="https://web.archive.org/web/20080204015428/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/#post377810" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/06/07, 7:05 PM">Patch 2.1.1</span></td><td><span class="diams" id="bronze">♦</span>&nbsp;Lactose</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_377810">Would you mind uploading the text file? I think I've got an idea.</div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="post377816" href="#post377816">#7</a></td><td><a href="https://web.archive.org/web/20080204015428/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/#post377816" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/06/07, 7:16 PM">Patch 2.1.1</span></td><td>Celandro</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_377816">Looking at the log, it may be that flurry charges are queuing up. Specifically,<br>
+I120: 3 queued<br>
+I121: 3-1+3 = 5 queued<br>
+I122: 5-1 =4queue<br>
+I123: 4-1 =3queue<br>
+I124: 3-1 +3 =5queue<br>
+I125: 5-1 =4queue<br>
+I126: 4-1 +3 =6queue<br>
+I127: 6-1 =5queue<br>
+I128: 5-1 =4queue<br>
+I129: 4-1 +3=6queue<br>
+I130: 6-1 =5queue<br>
+I131: 5-1 =4queue<br>
+I132: 4-1 =3queue<br>
+I133: 3-1 =2queue<br>
+I134: 2-1 =1queue<br>
+I135: 1-1 =0queue<br>
+I136: Flurry fades<br>
+<br>
+<br>
+I148: 3 queued<br>
+I150: 3-1 +3= 5 queued<br>
+I151: 5-1 = 4 queued<br>
+I152: 4-1 +3= 6 queued<br>
+I153: 6-1 +3= 8 queued<br>
+I154: 8-1 = 7 queued<br>
+I155: 7-1 = 6 queued<br>
+I156: 6-1 +3= 8 queued<br>
+I157: 8-1 = 7 queued<br>
+I158: 7-1 = 6 queued<br>
+I159: 6-1 = 5 queued<br>
+I160: 5-1 +3= 7 queued<br>
+I162: 7-1 = 6 queued<br>
+I163: 6-1 = 5 queued<br>
+I164: 5-1 = 4 queued<br>
+I165: 4-1 = 3 queued<br>
+I166: 3-1 = 2 queued<br>
+I167: 2-1 = 1 queued<br>
+I168: Fades<br>
+<br>
+Nope doesnt work  but its kinda close</div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="post377852" href="#post377852">#8</a></td><td><a href="https://web.archive.org/web/20080204015428/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/#post377852" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/06/07, 7:51 PM">Patch 2.1.1</span></td><td><span class="diams" id="bronze">♦</span>&nbsp;Disquette</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_377852">I've uploaded the full log.  You'll have to strip out a bunch of stuff probably, I know it made it easier for me.  Also, the way I figured offhand/mainhand was by the amount of damage the swing did, and for my misses, I went through one by one and looked at the surrounding attacks to determine which was which.</div>
+		<!-- / message -->
+	
+		
+		<!-- attachments -->
+			<div style="padding:3px">
+			
+			
+		
+			
+			
+			
+			
+			
+				<fieldset class="fieldset">
+					<legend>Attached Files</legend>
+					<table cellpadding="0" cellspacing="3" border="0">
+					<tbody><tr>
+	<td><img class="inlineimg" src="/web/20080204015428im_/http://elitistjerks.com/images/chestnut/attach/txt.gif" alt="File Type: txt" width="16" height="16" border="0" style="vertical-align:baseline"></td>
+	<td><a href="https://web.archive.org/web/20080204015428/http://elitistjerks.com/attachments/f40/a564d1181170267-melee_combat_how_does_flurry_work/flurryinfo.txt">FlurryInfo.txt</a> <font color="#000000" style="font-size: 10px">(34.6 KB, 65 views)</font></td>
+</tr>
+					</tbody></table>
+				</fieldset>
+			
+			
+			
+			
+			</div>
+		<!-- / attachments -->
+		
+
+		
+	
+	</td></tr><tr><td><a id="post377881" href="#post377881">#9</a></td><td><a href="https://web.archive.org/web/20080204015428/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/#post377881" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/06/07, 8:23 PM">Patch 2.1.1</span></td><td>Timmervargen</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_377881">It's something that interests me as well. I've got my new pet project back in the other thread, but if you need data I could be up for providing some samples, seeing that I spend time with the Servants already. If so, any special parameters you want on it, or just plain unbuffed weapons of varying speeds on auto attack? I'm due for a respec soon either way, shifting a few points around. I could gather samples with 1-5 points in Flurry for comparative purposes if that would be useful.<br>
+<br>
+As for what causes this behaviour from Flurry, I'm rather stumped at the moment. Will mull if over and pray for a moment of clarity.</div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="post377912" href="#post377912">#10</a></td><td><a href="https://web.archive.org/web/20080204015428/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/#post377912" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/06/07, 8:50 PM">Patch 2.1.1</span></td><td><span class="diams" id="bronze">♦</span>&nbsp;Disquette</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_377912">Probably an automated system for timestamping Offhand and Mainhand hits in an easy-to-parse format would be the biggest help.<br>
+<br>
+Actually, if you have any un-enchanted tests (no stormstrike, no windfury), and can provide the same sort of combat log with different speed weapons than i had (2.6 and 2.8), that'd be helpful probably.</div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="post377947" href="#post377947">#11</a></td><td><a href="https://web.archive.org/web/20080204015428/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/#post377947" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/06/07, 9:37 PM">Patch 2.1.1</span><br /><span>Edited on</span><span title="06/06/07, 9:49 PM">Patch 2.1.1</span></td><td>slant</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_377947">Here's my theory.<br>
+<br>
+- Flurry does <i>not</i> stack on itself.<br>
+- <b>However,</b> it does work independently on each hand, just like crusader, so you can have 6 total charges. Like crusader, that isn't visible in the buff icon.<br>
+- If an attack procs flurry, it doesn't consume a charge.<br>
+<br>
+Row numbers in my spreadsheet match yours.<br>
+<br>
+<a href="https://web.archive.org/web/20080204015428/http://img479.imageshack.us/my.php?image=flurryxlsyr3.jpg" target="_blank"><img src="https://web.archive.org/web/20080204015428im_/http://img479.imageshack.us/img479/6048/flurryxlsyr3.th.jpg" border="0" alt=""></a><br>
+<br>
+Thoughts? It does seem to fit your results.</div>
+		<!-- / message -->
+	
+		
+
+		
+		<!-- edit note -->
+			<div class="smallfont">			<hr size="1" style="color:#FFFFFF">
+				<em>
+				Last edited by slant : 06/06/07 at <span class="time">9:49 PM</span>.
+				
+				</em>
+			</div>
+		<!-- / edit note -->
+		
+	
+	</td></tr><tr><td><a id="post377958" href="#post377958">#12</a></td><td><a href="https://web.archive.org/web/20080204015428/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/#post377958" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/06/07, 9:49 PM">Patch 2.1.1</span></td><td><span class="diams" id="bronze">♦</span>&nbsp;Disquette</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_377958">The part that I don't see working with that theory is that when you have a single proc, you don't get just that hand sped up (I think).  For instance, in that same combat log, check this part out from the very first flurry in the combat log:<br>
+<br>
+<div style="margin:20px; margin-top:5px">
+	<div class="smallfont" style="margin-bottom:0px"><img src="assets/code_html.gif" border="0"></div>
+	<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 3px;
+		border: 1px inset;
+		width: 694px;
+		height: 178px;
+		text-align: left;
+		overflow: auto">6/6 11:06:54.125  You hit Servant of Allistarj for 98. (OH)
+6/6 11:06:54.187  You hit Servant of Allistarj for 296. (MH)
+6/6 11:06:56.734  You hit Servant of Allistarj for 237. (MH)
+6/6 11:06:56.734  You crit Servant of Allistarj for 198. (OH) &lt;-- flurry!
+6/6 11:06:57.515  You gain Flurry.
+6/6 11:06:58.781  You hit Servant of Allistarj for 290. (MH) - 2.047
+6/6 11:06:59.062  You hit Servant of Allistarj for 104. (OH) - 2.328
+6/6 11:07:00.031  You hit Servant of Allistarj for 269. (MH) - 1.250
+6/6 11:07:01.187  You hit Servant of Allistarj for 101. (OH) - 2.125
+6/6 11:07:02.140  Flurry fades from you.</pre>
+</div>(after that there are a bunch of regular hits with "normal" weapon delay)<br>
+<br>
+In this example, Flurry is clearly evident on both hands (and wow @ that 1.25 delay main hand swing), even though only the off hand crit proc'd it.</div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="post377961" href="#post377961">#13</a></td><td><a href="https://web.archive.org/web/20080204015428/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/#post377961" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/06/07, 9:51 PM">Patch 2.1.1</span></td><td>slant</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_377961">Well it would still haste both hands as expected, flurry is an aura, but the buff itself can be applied independently, like crusader.<br>
+<br>
+You may have parried before that 1.25s swing, too.</div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="post377964" href="#post377964">#14</a></td><td><a href="https://web.archive.org/web/20080204015428/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/#post377964" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/06/07, 9:52 PM">Patch 2.1.1</span></td><td><span class="diams" id="green">♦</span>&nbsp;Vulajin</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_377964">Well, let's start with what we know about Flurry:<br>
+<br>
+- The length of time a weapon swing will take is determined after the previous swing with that weapon.<br>
+- When you crit, you gain a buff with three charges.<br>
+- When you swing while Flurry is active, the time-to-next-swing is only 70% of the normal length.<br>
+<br>
+Looking at the upper yellow region in your screenshot, let's see what's going on. First of all, you MH crit at 542.656 and proc three fresh Flurry charges. At the same time, you were already <i>in</i> Flurry, so your next MH swing gets the haste, and your ongoing OH swing was already hasted.<br>
+<br>
+Now, your OH hits at 544.187. Because Flurry is up, your next OH swing gets hasted. You should have 2 charges of Flurry left.<br>
+<br>
+Your MH hits at 544.671. Flurry is up, so your next MH swing gets hasted. You should have 1 charge of Flurry left.<br>
+<br>
+Your OH hits again at 546.312. Flurry is up, so your next OH swing is again hasted. You should be out of Flurry charges.<br>
+<br>
+Here's where weird stuff happens. Your MH hits again at 546.875 and gets hasted. Now you're at -1 Flurry charges. O.o<br>
+<br>
+Your OH hits at 548.5. Its next swing <i>is not</i> hasted (as you can see the next OH swing comes with a 2.625 delay at 551.125).<br>
+<br>
+Your MH hits at 548.718. Its next swing <i>is not</i> hasted (as you can see the next MH swing comes with a 2.594 delay at 551.312).<br>
+<br>
+Finally, at 549.296, over two seconds after the last hasted hit (and three seconds after it should have been used up), Flurry wears off.<br>
+<br>
+Now, my potential explanation for this is that Flurry doesn't wear off until the last Flurry-effected swing connects. However, it also seems to be affecting one more hit than it should. The "extra" hasted swing (by the MH at 546.875) doesn't seem to come soon enough after the third hasted swing to be able to be considered a lag effect. In addition, it's not likely that the first hasted swing incorrectly used a leftover charge of Flurry from before the 542.656 MH crit, because the first swing after that crit was over a second and a half later, plenty of time for the new Flurry effect to replace the old.</div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="post377968" href="#post377968">#15</a></td><td><a href="https://web.archive.org/web/20080204015428/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/#post377968" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/06/07, 9:57 PM">Patch 2.1.1</span></td><td>Pater</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_377968">Not sure if it helps, but a few weeks ago for my sim, I verified that the first swing after a flurry is proc'd by a special consumes the first charge.  (Nothing in my offhand, so no OH swings.)<br>
+<br>
+Something like this:<br>
+0.00 MH swing (flurry count = 0)<br>
+1.00 SS crit (flurry count = 3)<br>
+2.00 MH swing (flurry count = 2)<br>
+<br>
+Now, I never felt like I had enough precision in the time stamps to see whether flurry haste was prorated across the full delay, or if part of the flurry period is just wasted, or what.  But I definitely verified that the first swing consumes 1 charge, even if it's only very shortly after the SS crit.</div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="post377970" href="#post377970">#16</a></td><td><a href="https://web.archive.org/web/20080204015428/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/#post377970" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/06/07, 10:00 PM">Patch 2.1.1</span></td><td><span class="diams" id="bronze">♦</span>&nbsp;Lactose</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_377970">What I'm getting:<ul><li>Flurry is attached per weapon (off-hand vs main hand), lasting for 3 swings on said weapon.</li>
+<li>While Flurry is active (on either off-hand, main hand or both), both weapons get hasted.</li>
+<li>A crit reset its weapon's duration to 3 swings.</li>
+<li>When no weapon has a Flurry attached to it, the Flurry effect fades.</li>
+</ul></div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="post377978" href="#post377978">#17</a></td><td><a href="https://web.archive.org/web/20080204015428/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/#post377978" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/06/07, 10:14 PM">Patch 2.1.1</span></td><td>slant</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_377978">No. If you proc flurry mainhand, offhand attacks definitely consume charges. <br>
+<br>
+I still think my theory stands up.</div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="post377981" href="#post377981">#18</a></td><td><a href="https://web.archive.org/web/20080204015428/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/#post377981" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/06/07, 10:22 PM">Patch 2.1.1</span></td><td><span class="diams" id="bronze">♦</span>&nbsp;Disquette</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_377981"><div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:0px"><img src="assets/citation.gif" border="0"></div>
+	<table cellpadding="3" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border:1px inset">
+			
+				<div>
+					Originally Posted by <strong>Vulajin</strong>
+					<a href="#post377964" rel="nofollow"><img class="inlineimg" src="assets/viewpost.gif" border="0" alt="View Post"></a>
+				</div>
+				<div style="font-style:italic">Well, let's start with what we know about Flurry:<br>
+<br>
+- The length of time a weapon swing will take is determined after the previous swing with that weapon.<br>
+- When you crit, you gain a buff with three charges.<br>
+- When you swing while Flurry is active, the time-to-next-swing is only 70% of the normal length.<br>
+<br>
+Looking at the upper yellow region in your screenshot, let's see what's going on. First of all, you MH crit at 542.656 and proc three fresh Flurry charges. At the same time, you were already <i>in</i> Flurry, so your next MH swing gets the haste, and your ongoing OH swing was already hasted.<br>
+<br>
+Now, your OH hits at 544.187. Because Flurry is up, your next OH swing gets hasted. You should have 2 charges of Flurry left.<br>
+<br>
+Your MH hits at 544.671. Flurry is up, so your next MH swing gets hasted. You should have 1 charge of Flurry left.<br>
+<br>
+Your OH hits again at 546.312. Flurry is up, so your next OH swing is again hasted. You should be out of Flurry charges.<br>
+<br>
+Here's where weird stuff happens. Your MH hits again at 546.875 and gets hasted. Now you're at -1 Flurry charges. O.o<br>
+<br>
+Your OH hits at 548.5. Its next swing <i>is not</i> hasted (as you can see the next OH swing comes with a 2.625 delay at 551.125).<br>
+<br>
+Your MH hits at 548.718. Its next swing <i>is not</i> hasted (as you can see the next MH swing comes with a 2.594 delay at 551.312).<br>
+<br>
+Finally, at 549.296, over two seconds after the last hasted hit (and three seconds after it should have been used up), Flurry wears off.<br>
+<br>
+Now, my potential explanation for this is that Flurry doesn't wear off until the last Flurry-effected swing connects. However, it also seems to be affecting one more hit than it should. The "extra" hasted swing (by the MH at 546.875) doesn't seem to come soon enough after the third hasted swing to be able to be considered a lag effect. In addition, it's not likely that the first hasted swing incorrectly used a leftover charge of Flurry from before the 542.656 MH crit, because the first swing after that crit was over a second and a half later, plenty of time for the new Flurry effect to replace the old.</div>
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>Very nice explanation and walkthrough of the combat process, thank you.  I think it fits with what Pater wrote as well.<br>
+<br>
+I'll have more of the excel file (well, screenshots and the whole .xls) for viewing tomorrow.<br>
+<br>
+I wonder if it's as simple as saying "flurry grants you 4 charges instead of 3", and that the rest of the confusing aspect came from me not interpreting the data correctly.  Ah well, on to the g/f's house, I'll resume thoughts on this tomorrow :p</div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="post377982" href="#post377982">#19</a></td><td><a href="https://web.archive.org/web/20080204015428/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/#post377982" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/06/07, 10:24 PM">Patch 2.1.1</span></td><td><span class="diams" id="bronze">♦</span>&nbsp;Disquette</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_377982"><div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:0px"><img src="assets/citation.gif" border="0"></div>
+	<table cellpadding="3" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border:1px inset">
+			
+				<div>
+					Originally Posted by <strong>slant</strong>
+					<a href="#post377961" rel="nofollow"><img class="inlineimg" src="assets/viewpost.gif" border="0" alt="View Post"></a>
+				</div>
+				<div style="font-style:italic">You may have parried before that 1.25s swing, too.</div>
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>Well aren't you a smart cookie!<br>
+<br>
+<div style="margin:20px; margin-top:5px">
+	<div class="smallfont" style="margin-bottom:0px"><img src="assets/code_html.gif" border="0"></div>
+	<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 3px;
+		border: 1px inset;
+		width: 694px;
+		height: 146px;
+		text-align: left;
+		overflow: auto">6/6 11:06:58.781  You hit Servant of Allistarj for 290.
+6/6 11:06:59.062  You hit Servant of Allistarj for 104.
+6/6 11:06:59.156  Servant of Allistarj attacks. You parry. &lt;-------
+6/6 11:07:00.031  You hit Servant of Allistarj for 269.
+6/6 11:07:00.234  You gain 60 health from Healing Stream Totem VI's Healing Stream.
+6/6 11:07:01.046  Servant of Allistarj misses you.
+6/6 11:07:01.187  You hit Servant of Allistarj for 101.
+6/6 11:07:02.140  Flurry fades from you.</pre>
+</div>thanks - sometimes i miss the rather obvious in my attempts to cut down on the noise in the combat log ;-)</div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="post377986" href="#post377986">#20</a></td><td><a href="https://web.archive.org/web/20080204015428/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/#post377986" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/06/07, 10:29 PM">Patch 2.1.1</span><br /><span>Edited on</span><span title="06/07/07, 8:33 AM">Patch 2.1.1</span></td><td><span class="diams" id="green">♦</span>&nbsp;Xerophyte</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_377986">The 3 charges per hand theory doesn't appear to hold water either. From the provided log.<br>
+<br>
+<div style="margin:20px; margin-top:5px">
+	<div class="smallfont" style="margin-bottom:0px"><img src="assets/code_html.gif" border="0"></div>
+	<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 3px;
+		border: 1px inset;
+		width: 694px;
+		height: 178px;
+		text-align: left;
+		overflow: auto">6/6 11:07:38.703  You hit Servant of Allistarj for 95.    - OH
+6/6 11:07:39.515  You crit Servant of Allistarj for 488.  - MH
+6/6 11:07:40.484  You gain Flurry.
+6/6 11:07:41.203  You hit Servant of Allistarj for 102.   - OH, 2.500 delay
+6/6 11:07:41.703  You hit Servant of Allistarj for 261.   - MH, 2.188 delay
+6/6 11:07:43.437  You hit Servant of Allistarj for 106.   - OH, 2.234 delay
+6/6 11:07:43.750  You hit Servant of Allistarj for 281.   - MH, 2.047 delay
+6/6 11:07:44.109  Flurry fades from you.
+6/6 11:07:46.031  You crit Servant of Allistarj for 206.  - OH, 2.594 delay
+6/6 11:07:46.546  You crit Servant of Allistarj for 539.  - MH, 2.796 delay</pre>
+</div>4 swings in Flurry, 2 with each hand, all noticeably hasted. In this case the result is pretty consistent with Flurry lasting 3 autoswings; the buff was in fact queued for faiding after the OH hit at 43.437 and the last MH hit just got to tag along for the ride.<br>
+<br>
+My best guess is that what you're looking at is the Flurry "stack" being both slow to renew to 3 after a crit mid-Flurry and slow to fade when it's supposed to. If you crit while at 1 charge remaining then the game takes a second of thinking time before getting you back up to 3 charges, so you get a free extension of your old Flurry. As a Flurry is expended the game takes a second of thinking time to actually fade it, giving another free extension. The two effects combine to make the tail end of any Flurry streak considerably longer than it has a right to.<br>
+<br>
+A good way to discount the above possibility is find an isolated Flurry that lasts for 5-6 hits.</div>
+		<!-- / message -->
+	
+		
+
+		
+		<!-- edit note -->
+			<div class="smallfont">			<hr size="1" style="color:#FFFFFF">
+				<em>
+				Last edited by Xerophyte : 06/07/07 at <span class="time">8:33 AM</span>.
+				Reason: Now with correct subtraction!
+				</em>
+			</div>
+		<!-- / edit note -->
+		
+	
+	</td></tr><tr><td><a id="post378202" href="#post378202">#21</a></td><td><a href="https://web.archive.org/web/20080204015428/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/#post378202" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/07/07, 5:36 AM">Patch 2.1.1</span></td><td><span class="diams" id="bronze">♦</span>&nbsp;Lactose</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_378202">Indeed slant, I forgot about the fact that off-hand consumes main hand procs (and vice versa). In my defense, it was about 3 AM when I wrote it :P<br>
+The thing about Flurry sometimes lasting a swing too much though, l think can be credited to delay in applying / removing the Flurry buff.<br>
+For example, you can see instanced when the Flurry gain is almost a full second after a crit, and an "extra" flurried hit being ~0.3 seconds after when Flurry should have disappeared.<br>
+At the very least, I don't think this delay should be neglected.</div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="post379120" href="#post379120">#22</a></td><td><a href="https://web.archive.org/web/20080204015428/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/#post379120" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/07/07, 6:16 PM">Patch 2.1.1</span></td><td>Universal</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_379120"><div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:0px"><img src="assets/citation.gif" border="0"></div>
+	<table cellpadding="3" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border:1px inset">
+			
+				<div>
+					Originally Posted by <strong>slant</strong>
+					<a href="#post377961" rel="nofollow"><img class="inlineimg" src="assets/viewpost.gif" border="0" alt="View Post"></a>
+				</div>
+				<div style="font-style:italic">You may have parried before that 1.25s swing, too.</div>
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>This is something I haven't heard of before.  Does a parry alter your swing timer in some way?  I looked through the log and couldn't find anything consistent.  If there is some effect, do some of the irregularities vanish if we assume such swings don't consume a flurry charge?</div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="post379173" href="#post379173">#23</a></td><td><a href="https://web.archive.org/web/20080204015428/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/#post379173" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/07/07, 6:41 PM">Patch 2.1.1</span></td><td>thorin5</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_379173">Actually, if the attack hasted from the parry doesn't, for some reason, consume a flurry charge then it would explain that specific instance where it appears to be 4 attacks hasted by flurry.</div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="post379217" href="#post379217">#24</a></td><td><a href="https://web.archive.org/web/20080204015428/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/#post379217" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/07/07, 7:17 PM">Patch 2.1.1</span></td><td>slant</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_379217">Yes, after a parry your next swing is hasted by 40%. No clue if this stacks with or consumes flurry, although everybody assumes it does both.<br>
+<br>
+It's not just lasting one swing too many; Disquette had <i>six</i> flurried attacks after a single proc. There's definitely something else going on.<br>
+<br>
+I still tend to think my explanation is the most likely due to occam's razor; each hand procs separate buffs, simple.</div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="post379224" href="#post379224">#25</a></td><td><a href="https://web.archive.org/web/20080204015428/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/#post379224" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/07/07, 7:20 PM">Patch 2.1.1</span></td><td><span class="diams" id="bronze">♦</span>&nbsp;Lactose</td><td>
+	
+	
+		
+		
+		<!-- message -->
+		<div id="post_message_379224">I agree with most of it, excepting<br>
+<div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:0px"><img src="assets/citation.gif" border="0"></div>
+	<table cellpadding="3" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border:1px inset">
+			
+				If an attack procs flurry, it doesn't consume a charge.
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>I believe it resets that hand's stack, instead of just not consuming a charge.<br>
+Any logs confirming / disproving this?</div>
+		<!-- / message -->
+	
+		
+
+		
+	
+	</td></tr><tr><td><a id="post379228" href="#post379228">#26</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post379228" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/07/07, 7:24 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) -->Wandre<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -17,7 +728,7 @@ Edit:  This would also mean that you will always score 3 attacks when using only
 
 		
 	
-	</td></tr><tr><td><a id="post379234" href="#post379234">#27</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post379234" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/07/07, 7:29 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post379234" href="#post379234">#27</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post379234" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/07/07, 7:29 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -47,7 +758,7 @@ Slant, I'm just having trouble with reconciling what you saw (the strings of six
 
 		
 	
-	</td></tr><tr><td><a id="post379245" href="#post379245">#28</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post379245" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/07/07, 7:40 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) -->Wandre<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post379245" href="#post379245">#28</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post379245" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/07/07, 7:40 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) -->Wandre<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -68,7 +779,7 @@ That's an example of what would happen if you yellow crit with an attack.  Heroi
 
 		
 	
-	</td></tr><tr><td><a id="post379299" href="#post379299">#29</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post379299" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/07/07, 8:35 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) -->slant<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post379299" href="#post379299">#29</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post379299" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/07/07, 8:35 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) -->slant<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -81,7 +792,7 @@ That's an example of what would happen if you yellow crit with an attack.  Heroi
 
 		
 	
-	</td></tr><tr><td><a id="post379454" href="#post379454">#30</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post379454" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/08/07, 1:38 AM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) -->Universal<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post379454" href="#post379454">#30</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post379454" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/08/07, 1:38 AM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) -->Universal<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -152,7 +863,7 @@ I don't have any answer myself.  My wild guess was going to be some sort of vari
 
 		
 	
-	</td></tr><tr><td><a id="post379506" href="#post379506">#31</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post379506" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/08/07, 2:59 AM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post379506" href="#post379506">#31</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post379506" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/08/07, 2:59 AM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -182,7 +893,7 @@ So tired, bedtime.<!-- google_ad_section_end --></div>
 
 		
 	
-	</td></tr><tr><td><a id="post379542" href="#post379542">#32</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post379542" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/08/07, 4:20 AM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) -->Wandre<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post379542" href="#post379542">#32</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post379542" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/08/07, 4:20 AM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) -->Wandre<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -297,7 +1008,7 @@ If their code is actually checking on a per swing basis the data shown so far ha
 
 		
 	
-	</td></tr><tr><td><a id="post382893" href="#post382893">#33</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post382893" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/11/07, 5:32 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post382893" href="#post382893">#33</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post382893" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/11/07, 5:32 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -352,7 +1063,7 @@ After the last of the 3 attacks is made, take off flury from the screen and rese
 
 		
 	
-	</td></tr><tr><td><a id="post383526" href="#post383526">#34</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post383526" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/11/07, 11:31 PM">Patch 2.1.1</span><br /><span>Edited on</span><span title="06/11/07, 11:57 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post383526" href="#post383526">#34</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post383526" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/11/07, 11:31 PM">Patch 2.1.1</span><br /><span>Edited on</span><span title="06/11/07, 11:57 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -419,7 +1130,7 @@ Next up - test out this theory on the other data sets...<!-- google_ad_section_e
 		<!-- / edit note -->
 		
 	
-	</td></tr><tr><td><a id="post383619" href="#post383619">#35</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post383619" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/12/07, 3:25 AM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post383619" href="#post383619">#35</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post383619" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/12/07, 3:25 AM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -463,7 +1174,7 @@ So, now that we know this, the next question becomes... how do we model this?<!-
 
 		
 	
-	</td></tr><tr><td><a id="post383620" href="#post383620">#36</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post383620" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/12/07, 3:29 AM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) -->Kiklion<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post383620" href="#post383620">#36</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post383620" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/12/07, 3:29 AM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) -->Kiklion<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -480,7 +1191,7 @@ Use RF right before an autoshot and you optimize the RF.<!-- google_ad_section_e
 
 		
 	
-	</td></tr><tr><td><a id="post383634" href="#post383634">#37</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post383634" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/12/07, 4:08 AM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) -->drats<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post383634" href="#post383634">#37</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post383634" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/12/07, 4:08 AM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) -->drats<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -493,7 +1204,7 @@ Use RF right before an autoshot and you optimize the RF.<!-- google_ad_section_e
 
 		
 	
-	</td></tr><tr><td><a id="post383671" href="#post383671">#38</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post383671" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/12/07, 5:19 AM">Patch 2.1.1</span><br /><span>Edited on</span><span title="06/12/07, 5:38 AM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post383671" href="#post383671">#38</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post383671" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/12/07, 5:19 AM">Patch 2.1.1</span><br /><span>Edited on</span><span title="06/12/07, 5:38 AM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -569,7 +1280,7 @@ Anyway, on to the projected vs actual swing-delay-after-a-parry graphs (it's a b
 		<!-- / edit note -->
 		
 	
-	</td></tr><tr><td><a id="post383718" href="#post383718">#39</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post383718" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/12/07, 6:18 AM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) -->panny<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post383718" href="#post383718">#39</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post383718" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/12/07, 6:18 AM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) -->panny<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -586,7 +1297,7 @@ P.S. Thanks for all your hard work. It's much appreciated.<!-- google_ad_section
 
 		
 	
-	</td></tr><tr><td><a id="post383744" href="#post383744">#40</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post383744" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/12/07, 6:48 AM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post383744" href="#post383744">#40</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post383744" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/12/07, 6:48 AM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -635,7 +1346,7 @@ Or maybe I have the mechanics wrong, I'm not entirely sure.<!-- google_ad_sectio
 
 		
 	
-	</td></tr><tr><td><a id="post383924" href="#post383924">#41</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post383924" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/12/07, 11:00 AM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) -->panny<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post383924" href="#post383924">#41</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post383924" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/12/07, 11:00 AM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) -->panny<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -665,7 +1376,7 @@ That seemed like a much messier proposition to parse out, however.  So I took th
 
 		
 	
-	</td></tr><tr><td><a id="post384159" href="#post384159">#42</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post384159" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/12/07, 1:39 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post384159" href="#post384159">#42</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post384159" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/12/07, 1:39 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -678,7 +1389,7 @@ That seemed like a much messier proposition to parse out, however.  So I took th
 
 		
 	
-	</td></tr><tr><td><a id="post384768" href="#post384768">#43</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post384768" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/12/07, 6:21 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) -->Bufford<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post384768" href="#post384768">#43</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post384768" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/12/07, 6:21 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) -->Bufford<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -706,7 +1417,7 @@ That seemed like a much messier proposition to parse out, however.  So I took th
 
 		
 	
-	</td></tr><tr><td><a id="post384899" href="#post384899">#44</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post384899" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/12/07, 7:45 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post384899" href="#post384899">#44</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post384899" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/12/07, 7:45 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -719,7 +1430,7 @@ That seemed like a much messier proposition to parse out, however.  So I took th
 
 		
 	
-	</td></tr><tr><td><a id="post384918" href="#post384918">#45</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post384918" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/12/07, 8:00 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) -->Machinator<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post384918" href="#post384918">#45</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post384918" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/12/07, 8:00 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) -->Machinator<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -734,7 +1445,7 @@ Are the time left of swings held all server side? That seems a lot of traffic if
 
 		
 	
-	</td></tr><tr><td><a id="post384923" href="#post384923">#46</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post384923" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/12/07, 8:04 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) -->slant<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post384923" href="#post384923">#46</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post384923" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/12/07, 8:04 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) -->slant<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -764,7 +1475,7 @@ As far as flurry goes, I really liked my theory. It was elegant. Pity it turned 
 
 		
 	
-	</td></tr><tr><td><a id="post384937" href="#post384937">#47</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post384937" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/12/07, 8:13 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post384937" href="#post384937">#47</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post384937" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/12/07, 8:13 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -837,7 +1548,7 @@ After all, If I simply took the average of the swing times in the combat log, it
 
 		
 	
-	</td></tr><tr><td><a id="post384955" href="#post384955">#48</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post384955" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/12/07, 8:30 PM">Patch 2.1.1</span><br /><span>Edited on</span><span title="06/12/07, 8:35 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">◊</span>&nbsp;Vulajin<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post384955" href="#post384955">#48</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post384955" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/12/07, 8:30 PM">Patch 2.1.1</span><br /><span>Edited on</span><span title="06/12/07, 8:35 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">◊</span>&nbsp;Vulajin<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -899,7 +1610,7 @@ In conclusion: the charge behavior of Flurry should guarantee that no more than 
 		<!-- / edit note -->
 		
 	
-	</td></tr><tr><td><a id="post384960" href="#post384960">#49</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post384960" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/12/07, 8:36 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post384960" href="#post384960">#49</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post384960" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/12/07, 8:36 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -916,7 +1627,7 @@ Note that the MH is a 2.6 weapon (hasted = 2.0 speed), and the OH is a 2.8 weapo
 
 		
 	
-	</td></tr><tr><td><a id="post384973" href="#post384973">#50</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post384973" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/12/07, 8:50 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">◊</span>&nbsp;Vulajin<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post384973" href="#post384973">#50</a></td><td><a href="https://web.archive.org/web/20081110043404/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p2/#post384973" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/12/07, 8:50 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">◊</span>&nbsp;Vulajin<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -931,7 +1642,7 @@ Seriously though, I wouldn't reconcile it with what I wrote. It's very curious. 
 
 		
 	
-	</td></tr><tr><td><a id="post384978" href="#post384978">#51</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post384978" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/12/07, 8:53 PM">Patch 2.1.1</span><br /><span>Edited on</span><span title="06/12/07, 9:18 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) -->seku<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post384978" href="#post384978">#51</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post384978" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/12/07, 8:53 PM">Patch 2.1.1</span><br /><span>Edited on</span><span title="06/12/07, 9:18 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) -->seku<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -959,7 +1670,7 @@ Is it possible to get some lag data with these?<!-- google_ad_section_end --></d
 		<!-- / edit note -->
 		
 	
-	</td></tr><tr><td><a id="post385036" href="#post385036">#52</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post385036" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/12/07, 9:59 PM">Patch 2.1.1</span><br /><span>Edited on</span><span title="06/12/07, 10:05 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post385036" href="#post385036">#52</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post385036" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/12/07, 9:59 PM">Patch 2.1.1</span><br /><span>Edited on</span><span title="06/12/07, 10:05 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1029,7 +1740,7 @@ So, if weapons half the speed of the former weapons test were being used, and we
 		<!-- / edit note -->
 		
 	
-	</td></tr><tr><td><a id="post385054" href="#post385054">#53</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post385054" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/12/07, 10:50 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">◊</span>&nbsp;Xerophyte<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post385054" href="#post385054">#53</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post385054" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/12/07, 10:50 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">◊</span>&nbsp;Xerophyte<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1044,7 +1755,7 @@ Is there any more information to be gleaned from the client than what the combat
 
 		
 	
-	</td></tr><tr><td><a id="post385345" href="#post385345">#54</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post385345" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/13/07, 8:14 AM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) -->The Grog<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post385345" href="#post385345">#54</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post385345" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/13/07, 8:14 AM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) -->The Grog<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1061,7 +1772,7 @@ That could explain the larger odd flurries with fast weapons, as it would be eas
 
 		
 	
-	</td></tr><tr><td><a id="post385763" href="#post385763">#55</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post385763" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/13/07, 1:33 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post385763" href="#post385763">#55</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post385763" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/13/07, 1:33 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1074,7 +1785,7 @@ That could explain the larger odd flurries with fast weapons, as it would be eas
 
 		
 	
-	</td></tr><tr><td><a id="post388149" href="#post388149">#56</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post388149" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/15/07, 5:36 AM">Patch 2.1.1</span><br /><span>Edited on</span><span title="06/15/07, 5:46 AM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) -->seku<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post388149" href="#post388149">#56</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post388149" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/15/07, 5:36 AM">Patch 2.1.1</span><br /><span>Edited on</span><span title="06/15/07, 5:46 AM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) -->seku<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1097,7 +1808,7 @@ I'm sorry I can't do much, I'm currently enduring exams.<!-- google_ad_section_e
 		<!-- / edit note -->
 		
 	
-	</td></tr><tr><td><a id="post391124" href="#post391124">#57</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post391124" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/18/07, 1:52 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) -->Amorpheus<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post391124" href="#post391124">#57</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post391124" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/18/07, 1:52 PM">Patch 2.1.1</span></td><td><!-- google_ad_section_start(weight=ignore) -->Amorpheus<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1112,7 +1823,7 @@ Let's assume the 2.6 MH isn't hasted but the 1.5 OH is - the offhand will hit tw
 
 		
 	
-	</td></tr><tr><td><a id="post392240" href="#post392240">#58</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post392240" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/19/07, 9:45 AM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) -->D4vE<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post392240" href="#post392240">#58</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post392240" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/19/07, 9:45 AM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) -->D4vE<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1127,7 +1838,7 @@ Grab a tank to help you testing and perform all attacks from behind to avoid the
 
 		
 	
-	</td></tr><tr><td><a id="post392247" href="#post392247">#59</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post392247" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/19/07, 9:52 AM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) -->Pater<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post392247" href="#post392247">#59</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post392247" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/19/07, 9:52 AM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) -->Pater<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1144,7 +1855,7 @@ It's a workaround that uses the say channel and chat (not combat) logging to out
 
 		
 	
-	</td></tr><tr><td><a id="post392281" href="#post392281">#60</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post392281" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/19/07, 10:15 AM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post392281" href="#post392281">#60</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post392281" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/19/07, 10:15 AM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1174,7 +1885,7 @@ Grab a tank to help you testing and perform all attacks from behind to avoid the
 
 		
 	
-	</td></tr><tr><td><a id="post392538" href="#post392538">#61</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post392538" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/19/07, 12:30 PM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) -->Wandre<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post392538" href="#post392538">#61</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post392538" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/19/07, 12:30 PM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) -->Wandre<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1191,7 +1902,7 @@ Grab a nice 3.60 speed 2H wep and have a war thunderclap you.  You should be abl
 
 		
 	
-	</td></tr><tr><td><a id="post392708" href="#post392708">#62</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post392708" target="_blank">Source</a></td><td><span>Posted on</span><span title="06/19/07, 2:01 PM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) -->Maratai<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post392708" href="#post392708">#62</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post392708" target="_blank">Source</a></td><td><span>Posted on </span><span title="06/19/07, 2:01 PM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) -->Maratai<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1204,7 +1915,7 @@ Grab a nice 3.60 speed 2H wep and have a war thunderclap you.  You should be abl
 
 		
 	
-	</td></tr><tr><td><a id="post407381" href="#post407381">#63</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post407381" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/02/07, 5:36 AM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) -->Freyalis<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post407381" href="#post407381">#63</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post407381" target="_blank">Source</a></td><td><span>Posted on </span><span title="07/02/07, 5:36 AM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) -->Freyalis<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1245,7 +1956,7 @@ In regards to the questions above i would love to just dive into game and test t
 
 		
 	
-	</td></tr><tr><td><a id="post407448" href="#post407448">#64</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post407448" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/02/07, 8:52 AM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post407448" href="#post407448">#64</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post407448" target="_blank">Source</a></td><td><span>Posted on </span><span title="07/02/07, 8:52 AM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1278,7 +1989,7 @@ I'm not sure how you came up with the known fact of: <br>
 
 		
 	
-	</td></tr><tr><td><a id="post407452" href="#post407452">#65</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post407452" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/02/07, 8:58 AM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) -->dukes<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post407452" href="#post407452">#65</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post407452" target="_blank">Source</a></td><td><span>Posted on </span><span title="07/02/07, 8:58 AM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) -->dukes<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1318,7 +2029,7 @@ Are you sure that the reason they get out of sync is because of flurry? Looking 
 
 		
 	
-	</td></tr><tr><td><a id="post407524" href="#post407524">#66</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post407524" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/02/07, 10:44 AM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post407524" href="#post407524">#66</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post407524" target="_blank">Source</a></td><td><span>Posted on </span><span title="07/02/07, 10:44 AM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1348,7 +2059,7 @@ It's comparing a simulation with no lag jitter against a simulation with lots of
 
 		
 	
-	</td></tr><tr><td><a id="post407552" href="#post407552">#67</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post407552" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/02/07, 11:29 AM">Patch 2.1.2</span><br /><span>Edited on</span><span title="07/02/07, 11:39 AM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) -->Ailee<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post407552" href="#post407552">#67</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post407552" target="_blank">Source</a></td><td><span>Posted on </span><span title="07/02/07, 11:29 AM">Patch 2.1.2</span><br /><span>Edited on</span><span title="07/02/07, 11:39 AM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) -->Ailee<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1372,7 +2083,7 @@ Edit: It does also seem to apply the opposite way; If an attack starts before th
 		<!-- / edit note -->
 		
 	
-	</td></tr><tr><td><a id="post407555" href="#post407555">#68</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post407555" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/02/07, 11:31 AM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post407555" href="#post407555">#68</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post407555" target="_blank">Source</a></td><td><span>Posted on </span><span title="07/02/07, 11:31 AM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1385,7 +2096,7 @@ Edit: It does also seem to apply the opposite way; If an attack starts before th
 
 		
 	
-	</td></tr><tr><td><a id="post408445" href="#post408445">#69</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post408445" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/03/07, 9:37 AM">Patch 2.1.2</span><br /><span>Edited on</span><span title="07/03/07, 9:58 AM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post408445" href="#post408445">#69</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post408445" target="_blank">Source</a></td><td><span>Posted on </span><span title="07/03/07, 9:37 AM">Patch 2.1.2</span><br /><span>Edited on</span><span title="07/03/07, 9:58 AM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1449,7 +2160,7 @@ Also of note - I'm guessing that the test data for the last column, the 2.0/2.0 
 		<!-- / edit note -->
 		
 	
-	</td></tr><tr><td><a id="post408966" href="#post408966">#70</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post408966" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/03/07, 2:40 PM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) -->Pater<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post408966" href="#post408966">#70</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post408966" target="_blank">Source</a></td><td><span>Posted on </span><span title="07/03/07, 2:40 PM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) -->Pater<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1462,7 +2173,7 @@ Also of note - I'm guessing that the test data for the last column, the 2.0/2.0 
 
 		
 	
-	</td></tr><tr><td><a id="post409029" href="#post409029">#71</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post409029" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/03/07, 3:04 PM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post409029" href="#post409029">#71</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post409029" target="_blank">Source</a></td><td><span>Posted on </span><span title="07/03/07, 3:04 PM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1475,7 +2186,7 @@ Also of note - I'm guessing that the test data for the last column, the 2.0/2.0 
 
 		
 	
-	</td></tr><tr><td><a id="post409627" href="#post409627">#72</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post409627" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/04/07, 5:01 AM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) -->Freyalis<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post409627" href="#post409627">#72</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post409627" target="_blank">Source</a></td><td><span>Posted on </span><span title="07/04/07, 5:01 AM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) -->Freyalis<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1497,7 +2208,7 @@ I only ask as the somewhat dated entry for flurry in wowwiki mentions that parry
 
 		
 	
-	</td></tr><tr><td><a id="post409939" href="#post409939">#73</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post409939" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/04/07, 2:24 PM">Patch 2.1.2</span><br /><span>Edited on</span><span title="09/05/07, 5:01 PM">Patch 2.1.3</span></td><td><!-- google_ad_section_start(weight=ignore) -->Rezarel<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post409939" href="#post409939">#73</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post409939" target="_blank">Source</a></td><td><span>Posted on </span><span title="07/04/07, 2:24 PM">Patch 2.1.2</span><br /><span>Edited on</span><span title="09/05/07, 5:01 PM">Patch 2.1.3</span></td><td><!-- google_ad_section_start(weight=ignore) -->Rezarel<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1562,7 +2273,7 @@ TheoryFlurryAttacks should be 2000 + (30% * 42.3% * 2000) = 2000 + 254 = 2254.<!
 		<!-- / edit note -->
 		
 	
-	</td></tr><tr><td><a id="post409953" href="#post409953">#74</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post409953" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/04/07, 2:56 PM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post409953" href="#post409953">#74</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post409953" target="_blank">Source</a></td><td><span>Posted on </span><span title="07/04/07, 2:56 PM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1581,7 +2292,7 @@ Thanks again.<!-- google_ad_section_end --></div>
 
 		
 	
-	</td></tr><tr><td><a id="post409972" href="#post409972">#75</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post409972" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/04/07, 3:38 PM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) -->galzohar<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post409972" href="#post409972">#75</a></td><td><a href="https://web.archive.org/web/20081110043424/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p3/#post409972" target="_blank">Source</a></td><td><span>Posted on </span><span title="07/04/07, 3:38 PM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) -->galzohar<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1594,7 +2305,7 @@ Thanks again.<!-- google_ad_section_end --></div>
 
 		
 	
-	</td></tr><tr><td><a id="post410150" href="#post410150">#76</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post410150" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/04/07, 8:33 PM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) -->Xoya<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post410150" href="#post410150">#76</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post410150" target="_blank">Source</a></td><td><span>Posted on </span><span title="07/04/07, 8:33 PM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) -->Xoya<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1607,7 +2318,7 @@ Thanks again.<!-- google_ad_section_end --></div>
 
 		
 	
-	</td></tr><tr><td><a id="post410374" href="#post410374">#77</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post410374" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/05/07, 5:12 AM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) -->galzohar<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post410374" href="#post410374">#77</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post410374" target="_blank">Source</a></td><td><span>Posted on </span><span title="07/05/07, 5:12 AM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) -->galzohar<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1621,7 +2332,7 @@ Warriors are where things get more complicated.<!-- google_ad_section_end --></d
 
 		
 	
-	</td></tr><tr><td><a id="post411049" href="#post411049">#78</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post411049" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/05/07, 6:41 PM">Patch 2.1.2</span><br /><span>Edited on</span><span title="07/05/07, 6:57 PM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) -->Tornhoof<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post411049" href="#post411049">#78</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post411049" target="_blank">Source</a></td><td><span>Posted on </span><span title="07/05/07, 6:41 PM">Patch 2.1.2</span><br /><span>Edited on</span><span title="07/05/07, 6:57 PM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) -->Tornhoof<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1669,7 +2380,7 @@ Maybe I can get around the wf proc stuff, by assuming "each 3.15s wf will proc w
 		<!-- / edit note -->
 		
 	
-	</td></tr><tr><td><a id="post411531" href="#post411531">#79</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post411531" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/06/07, 9:47 AM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post411531" href="#post411531">#79</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post411531" target="_blank">Source</a></td><td><span>Posted on </span><span title="07/06/07, 9:47 AM">Patch 2.1.2</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1682,7 +2393,7 @@ Maybe I can get around the wf proc stuff, by assuming "each 3.15s wf will proc w
 
 		
 	
-	</td></tr><tr><td><a id="post418421" href="#post418421">#80</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post418421" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/12/07, 6:04 PM">Patch 2.1.3</span><br /><span>Edited on</span><span title="07/12/07, 7:41 PM">Patch 2.1.3</span></td><td><!-- google_ad_section_start(weight=ignore) -->Tornhoof<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post418421" href="#post418421">#80</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post418421" target="_blank">Source</a></td><td><span>Posted on </span><span title="07/12/07, 6:04 PM">Patch 2.1.3</span><br /><span>Edited on</span><span title="07/12/07, 7:41 PM">Patch 2.1.3</span></td><td><!-- google_ad_section_start(weight=ignore) -->Tornhoof<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1723,7 +2434,7 @@ A proper simplification would be to say 9 charges and say what is the probabilit
 		<!-- / edit note -->
 		
 	
-	</td></tr><tr><td><a id="post419774" href="#post419774">#81</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post419774" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/13/07, 9:06 PM">Patch 2.1.3</span></td><td><!-- google_ad_section_start(weight=ignore) -->T.K.<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post419774" href="#post419774">#81</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post419774" target="_blank">Source</a></td><td><span>Posted on </span><span title="07/13/07, 9:06 PM">Patch 2.1.3</span></td><td><!-- google_ad_section_start(weight=ignore) -->T.K.<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1778,7 +2489,7 @@ An example of the lol flurry procs with x number procs:<br>
 
 		
 	
-	</td></tr><tr><td><a id="post419893" href="#post419893">#82</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post419893" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/14/07, 1:17 AM">Patch 2.1.3</span></td><td><!-- google_ad_section_start(weight=ignore) -->Xoya<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post419893" href="#post419893">#82</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post419893" target="_blank">Source</a></td><td><span>Posted on </span><span title="07/14/07, 1:17 AM">Patch 2.1.3</span></td><td><!-- google_ad_section_start(weight=ignore) -->Xoya<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1791,7 +2502,7 @@ An example of the lol flurry procs with x number procs:<br>
 
 		
 	
-	</td></tr><tr><td><a id="post420163" href="#post420163">#83</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post420163" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/14/07, 2:17 PM">Patch 2.1.3</span></td><td><!-- google_ad_section_start(weight=ignore) -->T.K.<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post420163" href="#post420163">#83</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post420163" target="_blank">Source</a></td><td><span>Posted on </span><span title="07/14/07, 2:17 PM">Patch 2.1.3</span></td><td><!-- google_ad_section_start(weight=ignore) -->T.K.<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1804,7 +2515,7 @@ An example of the lol flurry procs with x number procs:<br>
 
 		
 	
-	</td></tr><tr><td><a id="post420283" href="#post420283">#84</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post420283" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/14/07, 5:14 PM">Patch 2.1.3</span></td><td><!-- google_ad_section_start(weight=ignore) -->Blightlenox<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post420283" href="#post420283">#84</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post420283" target="_blank">Source</a></td><td><span>Posted on </span><span title="07/14/07, 5:14 PM">Patch 2.1.3</span></td><td><!-- google_ad_section_start(weight=ignore) -->Blightlenox<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1817,7 +2528,7 @@ An example of the lol flurry procs with x number procs:<br>
 
 		
 	
-	</td></tr><tr><td><a id="post421680" href="#post421680">#85</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post421680" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/16/07, 2:52 PM">Patch 2.1.3</span></td><td><!-- google_ad_section_start(weight=ignore) -->Duranthor<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post421680" href="#post421680">#85</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post421680" target="_blank">Source</a></td><td><span>Posted on </span><span title="07/16/07, 2:52 PM">Patch 2.1.3</span></td><td><!-- google_ad_section_start(weight=ignore) -->Duranthor<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1836,7 +2547,7 @@ Is this what the evidence supports then?<!-- google_ad_section_end --></div>
 
 		
 	
-	</td></tr><tr><td><a id="post422103" href="#post422103">#86</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post422103" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/16/07, 11:00 PM">Patch 2.1.3</span></td><td><!-- google_ad_section_start(weight=ignore) -->T.K.<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post422103" href="#post422103">#86</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post422103" target="_blank">Source</a></td><td><span>Posted on </span><span title="07/16/07, 11:00 PM">Patch 2.1.3</span></td><td><!-- google_ad_section_start(weight=ignore) -->T.K.<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1855,7 +2566,7 @@ If anyone already tried this, could please post results?<!-- google_ad_section_e
 
 		
 	
-	</td></tr><tr><td><a id="post422354" href="#post422354">#87</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post422354" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/17/07, 8:56 AM">Patch 2.1.3</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post422354" href="#post422354">#87</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post422354" target="_blank">Source</a></td><td><span>Posted on </span><span title="07/17/07, 8:56 AM">Patch 2.1.3</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1883,7 +2594,7 @@ If anyone already tried this, could please post results?<!-- google_ad_section_e
 
 		
 	
-	</td></tr><tr><td><a id="post424207" href="#post424207">#88</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post424207" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/18/07, 5:49 PM">Patch 2.1.3</span><br /><span>Edited on</span><span title="07/18/07, 5:54 PM">Patch 2.1.3</span></td><td><!-- google_ad_section_start(weight=ignore) -->Petit_Mal<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post424207" href="#post424207">#88</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post424207" target="_blank">Source</a></td><td><span>Posted on </span><span title="07/18/07, 5:49 PM">Patch 2.1.3</span><br /><span>Edited on</span><span title="07/18/07, 5:54 PM">Patch 2.1.3</span></td><td><!-- google_ad_section_start(weight=ignore) -->Petit_Mal<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1913,7 +2624,7 @@ Given general buff mechanics, this seems like the most parsimonious explanation.
 		<!-- / edit note -->
 		
 	
-	</td></tr><tr><td><a id="post424247" href="#post424247">#89</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post424247" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/18/07, 6:19 PM">Patch 2.1.3</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post424247" href="#post424247">#89</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post424247" target="_blank">Source</a></td><td><span>Posted on </span><span title="07/18/07, 6:19 PM">Patch 2.1.3</span></td><td><!-- google_ad_section_start(weight=ignore) --><span class="diams" id="green">•</span>&nbsp;Disquette<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1926,7 +2637,7 @@ Given general buff mechanics, this seems like the most parsimonious explanation.
 
 		
 	
-	</td></tr><tr><td><a id="post424301" href="#post424301">#90</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post424301" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/18/07, 7:24 PM">Patch 2.1.3</span></td><td><!-- google_ad_section_start(weight=ignore) -->Petit_Mal<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post424301" href="#post424301">#90</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post424301" target="_blank">Source</a></td><td><span>Posted on </span><span title="07/18/07, 7:24 PM">Patch 2.1.3</span></td><td><!-- google_ad_section_start(weight=ignore) -->Petit_Mal<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1941,7 +2652,7 @@ Given general buff mechanics, this seems like the most parsimonious explanation.
 
 		
 	
-	</td></tr><tr><td><a id="post424305" href="#post424305">#91</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post424305" target="_blank">Source</a></td><td><span>Posted on</span><span title="07/18/07, 7:26 PM">Patch 2.1.3</span></td><td><!-- google_ad_section_start(weight=ignore) -->Tornhoof<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post424305" href="#post424305">#91</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post424305" target="_blank">Source</a></td><td><span>Posted on </span><span title="07/18/07, 7:26 PM">Patch 2.1.3</span></td><td><!-- google_ad_section_start(weight=ignore) -->Tornhoof<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1969,7 +2680,7 @@ Given general buff mechanics, this seems like the most parsimonious explanation.
 
 		
 	
-	</td></tr><tr><td><a id="post468112" href="#post468112">#92</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post468112" target="_blank">Source</a></td><td><span>Posted on</span><span title="09/04/07, 12:01 PM">Patch 2.1.3</span></td><td><!-- google_ad_section_start(weight=ignore) -->p o j<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post468112" href="#post468112">#92</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post468112" target="_blank">Source</a></td><td><span>Posted on </span><span title="09/04/07, 12:01 PM">Patch 2.1.3</span></td><td><!-- google_ad_section_start(weight=ignore) -->p o j<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -1985,7 +2696,7 @@ Obviously this is of interest as a dps warrior gets a significant boost by both 
 
 		
 	
-	</td></tr><tr><td><a id="post473046" href="#post473046">#93</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post473046" target="_blank">Source</a></td><td><span>Posted on</span><span title="09/10/07, 4:43 AM">Patch 2.1.3</span></td><td><!-- google_ad_section_start(weight=ignore) -->anticide<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post473046" href="#post473046">#93</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post473046" target="_blank">Source</a></td><td><span>Posted on </span><span title="09/10/07, 4:43 AM">Patch 2.1.3</span></td><td><!-- google_ad_section_start(weight=ignore) -->anticide<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -2019,7 +2730,7 @@ Obviously this is of interest as a dps warrior gets a significant boost by both 
 
 		
 	
-	</td></tr><tr><td><a id="post475081" href="#post475081">#94</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post475081" target="_blank">Source</a></td><td><span>Posted on</span><span title="09/11/07, 10:08 PM">Patch 2.1.3</span></td><td><!-- google_ad_section_start(weight=ignore) -->Machinator<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post475081" href="#post475081">#94</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post475081" target="_blank">Source</a></td><td><span>Posted on </span><span title="09/11/07, 10:08 PM">Patch 2.1.3</span></td><td><!-- google_ad_section_start(weight=ignore) -->Machinator<!-- google_ad_section_end --></td><td>
 	
 	
 		
@@ -2032,7 +2743,7 @@ Obviously this is of interest as a dps warrior gets a significant boost by both 
 
 		
 	
-	</td></tr><tr><td><a id="post499800" href="#post499800">#95</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post499800" target="_blank">Source</a></td><td><span>Posted on</span><span title="10/05/07, 8:03 AM">Patch 2.2.2</span></td><td><!-- google_ad_section_start(weight=ignore) -->WazAg<!-- google_ad_section_end --></td><td>
+	</td></tr><tr><td><a id="post499800" href="#post499800">#95</a></td><td><a href="https://web.archive.org/web/20081110043433/http://elitistjerks.com/f31/t12720-melee_combat_how_does_flurry_work/p4/#post499800" target="_blank">Source</a></td><td><span>Posted on </span><span title="10/05/07, 8:03 AM">Patch 2.2.2</span></td><td><!-- google_ad_section_start(weight=ignore) -->WazAg<!-- google_ad_section_end --></td><td>
 	
 	
 		

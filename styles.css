@@ -1,35 +1,46 @@
- tr {
-    display: flex;
+.datatable>tbody>tr,
+.datatable>thead>tr {
     border-bottom: 2px solid black;
+}
+table.dataTable{
+    width:100%!important;
+}
+tr {
+    display: flex;
     margin-top: 15px;
     padding-bottom: 15px;
 }
 td,th {
     margin: 0px 4px;
 }
-tr th:nth-of-type(1),
-tr td:nth-of-type(1) {
+img{
+    max-width: 100%;
+}
+.datatable>thead>tr>th:nth-of-type(1),
+.datatable>tbody>tr>td:nth-of-type(1),
+.datatable>thead>tr>th:nth-of-type(2),
+.datatable>tbody>tr>td:nth-of-type(2),
+.datatable>thead>tr>th:nth-of-type(4),
+.datatable>tbody>tr>td:nth-of-type(4){
+    /*width: calc(5vw - 10px)!important;*/
     flex: 5%;
+    overflow-wrap: anywhere;
 }
 
-tr th:nth-of-type(2),
-tr td:nth-of-type(2) {
-    flex: 5%;
-}
-tr th:nth-of-type(3),
-tr td:nth-of-type(3) {
+.datatable>thead>tr>th:nth-of-type(3),
+.datatable>tbody>tr>td:nth-of-type(3) {
     flex-direction: column;
     display: flex;
-    flex: 5%;
+    flex:5%;
+    /*width: calc(5vw - 10px)!important;*/
 }
-
-tr th:nth-of-type(4),
-tr td:nth-of-type(4) {
-    flex: 5%;
+.datatable>thead>tr>th:nth-of-type(5){
+    flex:80%;
 }
-tr th:nth-of-type(5),
-tr td:nth-of-type(5) {
-    flex: 80%;
+.datatable>tbody>tr>td:nth-of-type(5) { 
+    background: #ccccbd;
+    border: 1px solid;
+    flex:80%;
 }
 body{
     background:#DCDDD3;
@@ -42,3 +53,32 @@ body{
 .greenname,  .quality2 { color: #1EFF00; font-weight: bold; }
 .whitename,  .quality1 { color: #9D9D9D; font-weight: bold; }
 .greyname              { color: #6A6A6A; font-weight: bold; }
+
+@media
+only screen and (max-width: 1024px)  {
+
+    /* Force table to not be like tables anymore */
+    table.datatable, .datatable>thead, .datatable>tbody, .datatable>thead>tr>th, .datatable>tbody>tr>td, .datatable>tbody>tr {
+        display: inline-block;
+    }
+    thead{
+        display: none;
+    }
+    .datatable>tbody>tr>td:nth-of-type(3){flex-direction: row!important;}
+    .datatable>tbody>tr>td:nth-of-type(3) span + span{
+        margin-left: 4px;
+    }
+    .datatable>tbody>tr>td:nth-of-type(3) br + span{
+        margin-left: 10px;
+    }
+    .datatable>tbody>tr>td:nth-of-type(4):before { content: "Author: ";}
+    .datatable>thead {
+        display: none!important;
+    }
+    .datatable>tbody>tr {
+        width: 100%;
+    }
+    .datatable>tbody>tr>td {
+        min-width: 90%;
+    }
+}
