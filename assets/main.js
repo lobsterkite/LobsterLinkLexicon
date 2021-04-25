@@ -65,14 +65,8 @@ $(document).ready( function () {
 
 
 	let toggleState = storage.getItem('toggleState');
-	if(toggleState!=null && toggleState=="true"){
-		saveCheck.checked = true;	
-		createDataTable();
-	}
-	else{
-		//sometimes pgae size seems to fuck up anchors
-		document.querySelector(hash).scrollIntoView();
-	}
+	saveCheck.checked = (toggleState!=null && toggleState=="true");
+
 
 	//saveCheck.innerHTML = "Toggle use of DataTable";
 	let label = document.createElement("label");
@@ -90,9 +84,12 @@ $(document).ready( function () {
 
 	saveCheck.addEventListener ("click", dataTabler);
 
-	/*let toggleState = storage.getItem('toggleState');
 	if(toggleState!=null && toggleState===true){		
 		createDataTable();
-	}*/
+	}
+	else{
+		//sometimes pgae size seems to fuck up anchors
+		document.querySelector(hash).scrollIntoView();
+	}
 
 });
