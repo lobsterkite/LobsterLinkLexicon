@@ -78,11 +78,11 @@ $(document).ready( function () {
 	saveCheckHelp.textContent = " The Post #'s and reply buttons in quoted posts are links. If they don't work then toggle this button, it will load the entire page as basic html with no filtering/paging.";
 
 	let body = document.querySelector('body');
-	//body.prepend(saveCheckHelp);
-	//body.prepend(label);
-	//body.prepend(saveCheck);
+	body.prepend(saveCheckHelp);
+	body.prepend(label);
+	body.prepend(saveCheck);
 	console.log('added');
-	//saveCheck.addEventListener("click", dataTabler);
+	saveCheck.addEventListener("click", dataTabler);
 
 	if(toggleState!=null && toggleState===true){		
 		createDataTable();
@@ -90,7 +90,7 @@ $(document).ready( function () {
 	else{
 		//sometimes pgae size seems to fuck up anchors
 		document.querySelector(hash).scrollIntoView({ behavior: "smooth", block: "start" });
-		console.log('moving');
+		//console.log('moving');
 	}
 
 });
