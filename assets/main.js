@@ -51,11 +51,14 @@ $(document).ready( function () {
 		        }*/
 		    } );
 		    table.on('page.dt', function() {
+		    	//console.log('test');
 			  $('html, body').animate({
 			    scrollTop: $(".dataTables_wrapper").offset().top
 			   }, 'slow');
 			});
 		}
+	let hash = window.location.hash;
+
 	let saveCheck = document.createElement("input");
 	saveCheck.type="checkbox";
 	saveCheck.name = "toggleSaver";
@@ -65,6 +68,10 @@ $(document).ready( function () {
 	if(toggleState!=null && toggleState=="true"){
 		saveCheck.checked = true;	
 		createDataTable();
+	}
+	else{
+		//sometimes pgae size seems to fuck up anchors
+		document.querySelector(hash).scrollIntoView();
 	}
 
 	//saveCheck.innerHTML = "Toggle use of DataTable";
