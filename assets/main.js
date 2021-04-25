@@ -51,7 +51,7 @@ $(document).ready( function () {
 		        }*/
 		    } );
 		    table.on('page.dt', function() {
-		    	//console.log('test');
+		    	console.log('test');
 			  $('html, body').animate({
 			    scrollTop: $(".dataTables_wrapper").offset().top
 			   }, 'slow');
@@ -81,7 +81,7 @@ $(document).ready( function () {
 	body.prepend(saveCheckHelp);
 	body.prepend(label);
 	body.prepend(saveCheck);
-
+	console.log('added');
 	saveCheck.addEventListener ("click", dataTabler);
 
 	if(toggleState!=null && toggleState===true){		
@@ -90,6 +90,7 @@ $(document).ready( function () {
 	else{
 		//sometimes pgae size seems to fuck up anchors
 		document.querySelector(hash).scrollIntoView();
+		console.log('moving');
 	}
 
 });
