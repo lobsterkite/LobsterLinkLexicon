@@ -82,14 +82,14 @@ $(document).ready( function () {
 	//body.prepend(label);
 	//body.prepend(saveCheck);
 	console.log('added');
-	saveCheck.addEventListener ("click", dataTabler);
+	//saveCheck.addEventListener("click", dataTabler);
 
 	if(toggleState!=null && toggleState===true){		
 		createDataTable();
 	}
 	else{
 		//sometimes pgae size seems to fuck up anchors
-		document.querySelector(hash).scrollIntoView();
+		document.querySelector(hash).scrollIntoView({ behavior: "smooth", block: "start" });
 		console.log('moving');
 	}
 
