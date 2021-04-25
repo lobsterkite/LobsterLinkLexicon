@@ -1,8 +1,14 @@
+label{
+    font-weight: bold;
+}
 .datatable>tbody>tr,
-.datatable>thead>tr {
+.datatable>thead>tr,
+body>table>tbody>tr,
+body>table>thead>tr {
     border-bottom: 2px solid black;
 }
-table.dataTable{
+table.dataTable,
+body>table>table{
     width:100%!important;
 }
 tr {
@@ -21,23 +27,33 @@ img{
 .datatable>thead>tr>th:nth-of-type(2),
 .datatable>tbody>tr>td:nth-of-type(2),
 .datatable>thead>tr>th:nth-of-type(4),
-.datatable>tbody>tr>td:nth-of-type(4){
+.datatable>tbody>tr>td:nth-of-type(4),
+body>table>thead>tr>th:nth-of-type(1),
+body>table>tbody>tr>td:nth-of-type(1),
+body>table>thead>tr>th:nth-of-type(2),
+body>table>tbody>tr>td:nth-of-type(2),
+body>table>thead>tr>th:nth-of-type(4),
+body>table>tbody>tr>td:nth-of-type(4){
     /*width: calc(5vw - 10px)!important;*/
     flex: 5%;
     overflow-wrap: anywhere;
 }
 
 .datatable>thead>tr>th:nth-of-type(3),
-.datatable>tbody>tr>td:nth-of-type(3) {
+.datatable>tbody>tr>td:nth-of-type(3),
+body>table>table>thead>tr>th:nth-of-type(3),
+body>table>table>tbody>tr>td:nth-of-type(3) {
     flex-direction: column;
     display: flex;
     flex:5%;
     /*width: calc(5vw - 10px)!important;*/
 }
-.datatable>thead>tr>th:nth-of-type(5){
+.datatable>thead>tr>th:nth-of-type(5),
+body>table>thead>tr>th:nth-of-type(5){
     flex:80%;
 }
-.datatable>tbody>tr>td:nth-of-type(5) { 
+.datatable>tbody>tr>td:nth-of-type(5),
+body>table>tbody>tr>td:nth-of-type(5) { 
     background: #ccccbd;
     border: 1px solid;
     flex:80%;
@@ -58,27 +74,39 @@ body{
 only screen and (max-width: 1024px)  {
 
     /* Force table to not be like tables anymore */
-    table.datatable, .datatable>thead, .datatable>tbody, .datatable>thead>tr>th, .datatable>tbody>tr>td, .datatable>tbody>tr {
+    table.datatable, .datatable>thead, .datatable>tbody, .datatable>thead>tr>th, .datatable>tbody>tr>td, .datatable>tbody>tr,
+    body>table, body>table>thead, body>table>tbody, body>table>thead>tr>th, body>table>tbody>tr>td, body>table>tbody>tr {
         display: inline-block;
     }
     thead{
         display: none;
     }
-    .datatable>tbody>tr>td:nth-of-type(3){flex-direction: row!important;}
-    .datatable>tbody>tr>td:nth-of-type(3) span + span{
+    .datatable>tbody>tr>td:nth-of-type(3),
+    body>table>tbody>tr>td:nth-of-type(3)
+    {flex-direction: row!important;}
+    .datatable>tbody>tr>td:nth-of-type(3) span + span,
+    body>table>tbody>tr>td:nth-of-type(3) span + span{
         margin-left: 4px;
     }
-    .datatable>tbody>tr>td:nth-of-type(3) br + span{
+    .datatable>tbody>tr>td:nth-of-type(3) br + span,
+    body>table>tbody>tr>td:nth-of-type(3) br + span
+    {
         margin-left: 10px;
     }
-    .datatable>tbody>tr>td:nth-of-type(4):before { content: "Author: ";}
-    .datatable>thead {
+    .datatable>tbody>tr>td:nth-of-type(4):before,
+    body>table>tbody>tr>td:nth-of-type(4):before
+     { content: "Author: ";}
+    .datatable>thead,
+    body>table>thead {
         display: none!important;
     }
-    .datatable>tbody>tr {
+    .datatable>tbody>tr,
+    body>table>tbody>tr
+     {
         width: 100%;
     }
-    .datatable>tbody>tr>td {
+    .datatable>tbody>tr>td,
+    body>table>tbody>tr>td {
         min-width: 90%;
     }
 }
