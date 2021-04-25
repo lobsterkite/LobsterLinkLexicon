@@ -78,9 +78,9 @@ $(document).ready( function () {
 	saveCheckHelp.textContent = " The Post #'s and reply buttons in quoted posts are links. If they don't work then toggle this button, it will load the entire page as basic html with no filtering/paging.";
 
 	let body = document.querySelector('body');
-	body.prepend(saveCheckHelp);
-	body.prepend(label);
-	body.prepend(saveCheck);
+	//body.prepend(saveCheckHelp);
+	//body.prepend(label);
+	//body.prepend(saveCheck);
 	console.log('added');
 	saveCheck.addEventListener ("click", dataTabler);
 
