@@ -84,10 +84,10 @@ $(document).ready( function () {
 	console.log('added');
 	saveCheck.addEventListener("click", dataTabler);
 
-	if(toggleState!=null && toggleState===true){		
+	if(toggleState!=null && (toggleState == 'true' || toggleState===true)){		
 		createDataTable();
 	}
-	else{
+	else if(hash!=null && hash!=''){
 		//sometimes pgae size seems to fuck up anchors
 		document.querySelector(hash).scrollIntoView({ behavior: "smooth", block: "start" });
 		//console.log('moving');
